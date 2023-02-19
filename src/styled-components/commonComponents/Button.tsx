@@ -1,23 +1,7 @@
-import React from 'react';
 import styled, {css} from "styled-components";
+import {propsType} from "../../components/common/Button";
 
-type propsType ={
-    children?:React.ReactNode
-    buttonType?: "primary" | "secondary"
-    onClick: () => void
-    margin?:string
-}
-
-export const Button:React.FC<propsType> = ({onClick, ...props}) => {
-    const onClickHandler = () => {
-        onClick()
-    }
-    return (
-        <StyledButton onClick={onClickHandler} {...props}/>
-    );
-};
-
-const StyledButton = styled.button<propsType>`
+export const StyledButton = styled.button<propsType>`
   min-height: 2.5em;
   background-color: #2a2e49;
   color: #fff;

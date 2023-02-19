@@ -5,14 +5,15 @@ import {Logo} from "./Logo/Logo";
 import {Nav} from "./Nav/Nav";
 import {StyledWrapper} from "../../styled-components/Wrapper";
 import {Description} from "./HeaderDescription/Description";
-import {Button} from "../../styled-components/commonComponents/Button";
+import {Button} from "../common/Button";
+
 
 
 
 export const Header = () => {
     return (
         <>
-            <StyledWrapper  backgroundColor={"#2A2E49"}>
+            <StyledWrapper padding={"1em 0.2em"} backgroundColor={"#2A2E49"}>
                 <StyledContainer>
                     <Flex align={"center"}>
                         <Description/>
@@ -23,7 +24,7 @@ export const Header = () => {
                 </StyledContainer>
             </StyledWrapper>
 
-            <StyledWrapper>
+            <StyledWrapper padding={"1em 0.2em"}>
                 <StyledContainer>
                     <Flex justify={"space-between"}>
                         <Logo/>

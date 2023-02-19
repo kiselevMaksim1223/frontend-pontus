@@ -6,6 +6,6 @@ type propType = {
 }
 
 export const StyledWrapper = styled.div<propType>`
-  padding: ${props => props.padding ? props.padding : "1em 0"};
+  padding: ${props => props.padding ? props.padding : ""};
   background-color: ${props => props.backgroundColor ? props.backgroundColor : ""};
 `
