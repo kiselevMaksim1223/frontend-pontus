@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/guest-house/static/css/main.073c9b0a.css",
+    "main.js": "/guest-house/static/js/main.8dd97a6f.js",
+    "static/js/787.5e450183.chunk.js": "/guest-house/static/js/787.5e450183.chunk.js",
+    "static/media/Pontus.jpg": "/guest-house/static/media/Pontus.c0da91856536a0d9df0c.jpg",
+    "index.html": "/guest-house/index.html",
+    "main.073c9b0a.css.map": "/guest-house/static/css/main.073c9b0a.css.map",
+    "main.8dd97a6f.js.map": "/guest-house/static/js/main.8dd97a6f.js.map",
+    "787.5e450183.chunk.js.map": "/guest-house/static/js/787.5e450183.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.8dd97a6f.js"
+  ]
+}
