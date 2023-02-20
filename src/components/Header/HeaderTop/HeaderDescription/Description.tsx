@@ -1,14 +1,14 @@
 import React from 'react';
-import {Title} from "../../../styled-components/Title";
-import {Flex} from "../../../styled-components/Flex";
-import {StyledText} from "../../../styled-components/Text";
-import {LinkStyled} from "../../../styled-components/Header/Nav/LinkStyled";
-import {StyledWrapper} from "../../../styled-components/Wrapper";
+import {StyledTitle} from "../../../../styled-components/Title";
+import {Flex} from "../../../../styled-components/Flex";
+import {StyledText} from "../../../../styled-components/Text";
+import {LinkStyled} from "../../../../styled-components/Header/Nav/LinkStyled";
+import {StyledWrapper} from "../../../../styled-components/Wrapper";
 
 export const Description = () => {
     return (
         <Flex columnGap={"2em"} align={"center"}>
-            <Title color={"white"}>Hotel Pontus</Title>
+            <StyledTitle color={"white"}>Hotel Pontus</StyledTitle>
             <StyledText width={"50%"} color={"white"}>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 <StyledWrapper padding={"0.3em 0"}>

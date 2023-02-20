@@ -1,11 +1,11 @@
 import React from 'react';
 import {StyledWrapper} from "../../styled-components/Wrapper";
-import {HomePage} from "./HomePage/HomePage";
+import {PagesRouting} from "./Pages/PagesRouting";
 
 export const MainSection = () => {
     return (
         <StyledWrapper>
-            <HomePage/>
+            <PagesRouting/>
         </StyledWrapper>
     );
 };

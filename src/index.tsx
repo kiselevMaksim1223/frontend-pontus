@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {Global} from "./styled-components/GlobalStyle/GlobalStyle";
+import {HashRouter} from "react-router-dom";
 
 
 const root = ReactDOM.createRoot(
@@ -12,7 +13,9 @@ const root = ReactDOM.createRoot(
 root.render(
     <>
         <Global/>
-        <App/>
+        <HashRouter>
+            <App/>
+        </HashRouter>
     </>
 );
 
