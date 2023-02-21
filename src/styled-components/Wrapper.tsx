@@ -4,12 +4,17 @@ type propType = {
     backgroundColor?: string
     padding?: string
     blackout?: boolean
+    position?:string
+    width?:string
+    bottom?:string
 }
 
 export const StyledWrapper = styled.div<propType>`
   padding: ${props => props.padding ? props.padding : ""};
   background-color: ${props => props.backgroundColor ? props.backgroundColor : ""};
-  position: relative;
+  position: ${props => props.position || "relative"};
+  width: ${props => props.width};
+  bottom: ${props => props.bottom};
   ${(props) => props.blackout && css`
     ::after {
       content: '';

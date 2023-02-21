@@ -8,7 +8,7 @@ import {NavLink} from "react-router-dom";
 export const Logo = () => {
     return (
         <NavLink to={"/"}>
-            <StyledImg src={logo} alt="Logo"/>
+            <StyledImg src={logo} alt="Logo" width={"150px"}/>
             {/*<Title asType={"h2"} color={"white"}>PONTUS</Title>*/}
         </NavLink>
     );

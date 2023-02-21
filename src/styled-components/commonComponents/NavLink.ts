@@ -2,7 +2,7 @@ import styled, {css} from "styled-components";
 import {NavLink} from "react-router-dom";
 
 type propsType = {
-    linkStyle?: "primary" | "secondary"
+    linktype?: "primary" | "secondary"
 }
 
 export const NavLinkStyled = styled(NavLink)<propsType>`
@@ -24,7 +24,7 @@ export const NavLinkStyled = styled(NavLink)<propsType>`
       background-color: white;
     }
   }
-  ${props => props.linkStyle === "secondary" && css`
+  ${props => props.linktype === "secondary" && css`
     &:hover {
       ::after {
         content: '';

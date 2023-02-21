@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
-export const StyledImg = styled.img`
-  width: 150px;
+type propsType = {
+    width?:string
+}
+
+export const StyledImg = styled.img<propsType>`
+  width: ${props => props.width};
 `
