@@ -6,15 +6,23 @@ type propType = {
     blackout?: boolean
     position?:string
     width?:string
+    height?:string
     bottom?:string
+    alignSelf?:string
+    margin?:string
+    lineHeight?:string
 }
 
 export const StyledWrapper = styled.div<propType>`
-  padding: ${props => props.padding ? props.padding : ""};
-  background-color: ${props => props.backgroundColor ? props.backgroundColor : ""};
-  position: ${props => props.position || "relative"};
+  padding: ${props => props.padding};
+  background-color: ${props => props.backgroundColor};
+  position: ${props => props.position};
   width: ${props => props.width};
+  height: ${props => props.height}
   bottom: ${props => props.bottom};
+  align-self: ${props => props.alignSelf};
+  margin: ${props => props.margin};
+  line-height: ${props => props.lineHeight};
   ${(props) => props.blackout && css`
     ::after {
       content: '';

@@ -9,7 +9,7 @@ import {ButtonLink} from "../../../styled-components/MainBlock/HomePage/HomePage
 
 export const HomePage: React.FC = () => {
     return (
-        <StyledWrapper blackout>
+        <StyledWrapper blackout position={"relative"}>
             <StyledHomePgImg img={HomePgImg}>
                 <HomePageForm>
                     <StyledTitle as={"h2"} color={"white"} position={"relative"} margin={"0 0 1.5em 0"}>OUR HOME IS YOUR HOME</StyledTitle>
