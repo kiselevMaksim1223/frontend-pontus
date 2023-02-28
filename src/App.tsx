@@ -9,7 +9,7 @@ import {Footer} from "./components/Footter/Footer";
 function App() {
     return (
         <AppWrapper>
-            <Header />
+            <Header/>
             <MainSection/>
             <Footer/>
         </AppWrapper>

@@ -42,4 +42,20 @@ export const StyledButton = styled.button<propsType>`
               color: #2a2e49;
             }
           `}
+  ${(props) =>
+          props.buttonType === "burger" &&
+          css<propsType>`
+            background: url("${props => props.bcImg}") no-repeat center / contain;
+            align-self: flex-end;
+            &:active {
+              border: 1px solid white;
+              color: #2a2e49;
+              background: white;
+            }
+            &:hover{
+              border: 1px solid white;
+              
+            }
+          `
+  }
 `

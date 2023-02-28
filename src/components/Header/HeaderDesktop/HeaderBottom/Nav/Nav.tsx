@@ -1,6 +1,6 @@
 import React from 'react';
-import {LiStyled, UlStyled} from "../../../../styled-components/Header/Nav/ULStyled";
-import {NavLinkStyled} from "../../../../styled-components/commonComponents/NavLink";
+import {LiStyled, UlStyled} from "../../../../../styled-components/Header/Nav/ULStyled";
+import {NavLinkStyled} from "../../../../../styled-components/commonComponents/NavLink";
 
 export const Nav = () => {
     return (

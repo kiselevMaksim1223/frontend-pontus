@@ -3,10 +3,11 @@ import {NavLink} from "react-router-dom";
 
 type propsType = {
     linktype?: "primary" | "secondary"
+    fontSize?: "xx-small" | "x-small" | "small" | "medium" | "large" | "x-large" | "xx-large" | "xxx-large"
 }
 
 export const NavLinkStyled = styled(NavLink)<propsType>`
-  font-size: medium;
+  font-size: ${props => props.fontSize ? props.fontSize : "medium"};
   font-weight: 400;
   color: inherit;
   position: relative;

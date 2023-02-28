@@ -2,7 +2,7 @@ import React from 'react';
 import {StyledWrapper} from "../../styled-components/Wrapper";
 import {StyledContainer} from "../../styled-components/Container";
 import {FlexStyled} from "../../styled-components/Flex";
-import {Logo} from "../Header/HeaderBottom/Logo/Logo";
+import {Logo} from "../Header/HeaderDesktop/HeaderBottom/Logo/Logo";
 import inst from "../../styled-components/Footer/icons/img/inst.png"
 import fb from "../../styled-components/Footer/icons/img/fb.png"
 import {StyledText} from "../../styled-components/Text";
@@ -15,7 +15,7 @@ export const Footer = () => {
         <StyledWrapper margin={"auto 0 0 0"} alignSelf={"bottom"} bottom={"0"} width={"100%"} position={"relative"} backgroundColor={"#2A2E49"}>
             <StyledContainer>
                 <FlexStyled direction={"column"} align={"center"} rowGap={"2em"} padding={"2em"}>
-                    <Logo/>
+                    <Logo width={"150px"}/>
                     <StyledWrapper>
                         <FlexStyled>
                             <Icon img={inst} link={"https://www.instagram.com/hotelpontus/"}/>

@@ -1,10 +1,12 @@
 import React from "react";
 import {StyledButton} from "../../styled-components/commonComponents/Button";
 
+
 export type propsType ={
     children?:React.ReactNode
-    buttonType?: "primary" | "secondary"
+    buttonType?: "primary" | "secondary" | "burger"
     margin?:string
+    bcImg?:string
 
     onClick: () => void
 }

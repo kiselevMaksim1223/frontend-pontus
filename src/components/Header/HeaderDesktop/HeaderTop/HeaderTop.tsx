@@ -1,7 +1,7 @@
 import React from 'react';
-import {StyledContainer} from "../../../styled-components/Container";
+import {StyledContainer} from "../../../../styled-components/Container";
 import {Description} from "./HeaderDescription/Description";
-import {StyledWrapper} from "../../../styled-components/Wrapper";
+import {StyledWrapper} from "../../../../styled-components/Wrapper";
 
 export const HeaderTop = () => {
     return (

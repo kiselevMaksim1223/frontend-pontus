@@ -1,9 +1,9 @@
 import React from 'react';
-import {StyledTitle} from "../../../../styled-components/Title";
-import {FlexStyled} from "../../../../styled-components/Flex";
-import {StyledText} from "../../../../styled-components/Text";
-import {LinkStyled} from "../../../../styled-components/Header/Nav/LinkStyled";
-import {Button} from "../../../common/Button";
+import {StyledTitle} from "../../../../../styled-components/Title";
+import {FlexStyled} from "../../../../../styled-components/Flex";
+import {StyledText} from "../../../../../styled-components/Text";
+import {LinkStyled} from "../../../../../styled-components/Header/Nav/LinkStyled";
+import {Button} from "../../../../common/Button";
 
 export const Description = () => {
     return (
