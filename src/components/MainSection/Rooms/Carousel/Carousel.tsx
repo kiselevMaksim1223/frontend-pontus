@@ -1,6 +1,8 @@
-import React, {Children, FC, ReactNode, useEffect, useState} from 'react';
-import styled, {css} from "styled-components";
-import {PAGE_WIDTH} from "../Rooms";
+import React, {Children, FC, ReactNode, useEffect, useRef, useState} from 'react';
+import {Arrow} from "../../../../styled-components/MainBlock/Rooms/Carousel/ArrowStyled";
+import {CarouselMainContainer} from "../../../../styled-components/MainBlock/Rooms/Carousel/CarouselMainContainerStyled";
+import {WindowCarousel} from "../../../../styled-components/MainBlock/Rooms/Carousel/WindowCarouselStyled";
+import {AllCarouselPageCont} from "../../../../styled-components/MainBlock/Rooms/Carousel/AllCarouselPageConteinerStyled";
 
 type carouselType = {
     children?: ReactNode
@@ -9,101 +11,63 @@ type carouselType = {
 export const Carousel: FC<carouselType> = ({children}) => {
     const [pages, setPages] = useState<ReactNode | ReactNode[]>([])
     const [offset, setOffset] = useState(0)
+    const [photoWidth, setPhotoWidth] = useState<number>(0)
 
+    const ref = useRef<HTMLDivElement | null>(null)
+
+
+    //make a list of photos in future
     useEffect(() => {
         setPages(Children.map(children, child => child))
         console.log()
     }, [children])
 
+    useEffect(() => {
+        if(ref.current){
+            setPhotoWidth(ref.current.offsetWidth)
+            console.log(photoWidth)
+        }
+    })
+
+    //slider to the right side
     const rightSlideHandle = () => {
         console.log("right slide")
         setOffset((currOffset) => {
 
-            const newOffset = currOffset - PAGE_WIDTH
-
-            const maxOffset = -(PAGE_WIDTH * (Children.toArray(children).length-1))
+            const newOffset = currOffset - photoWidth
+            console.log(photoWidth, newOffset)
+            const maxOffset = -(photoWidth * (Children.toArray(children).length-1))
+            console.log(newOffset, maxOffset)
             return Math.max(newOffset, maxOffset)
         })
     }
-
+    //slider to the left side
     const leftSlideHandle = () => {
         console.log("left slide")
         setOffset((currOffset) => {
-            const newOffset = currOffset + PAGE_WIDTH
+            const newOffset = currOffset + photoWidth
 
             return Math.min(newOffset, 0)
         })
     }
 
     return (
-        <CarouselContainer>
+        <CarouselMainContainer >
             <Arrow side={"left"} onClick={leftSlideHandle}/>
-            <WindowCarousel>
+            <WindowCarousel ref={ref}>
                 <AllCarouselPageCont style={{transform: `translateX(${offset}px)`}}>
                     {pages}
                 </AllCarouselPageCont>
             </WindowCarousel>
             <Arrow side={"right"} onClick={rightSlideHandle}/>
-        </CarouselContainer>
+        </CarouselMainContainer>
     );
 };
 
-const CarouselContainer = styled.div`
-  width: 683px;
-  height: 300px;
-  
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  box-sizing: border-box;
-`
 
-const WindowCarousel = styled.div`
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-`
 
-const AllCarouselPageCont = styled.div`
-  height: 100%;
-  display: flex;
-`
 
-type ArrowType = {
-    side: "left" | "right"
-}
 
-const Arrow = styled.div<ArrowType>`
-  position: relative;
-  width: 30px;
-  height: 30px;
-  border: 2px solid black;
-  border-radius:50%;
-  margin: 0 2px;
-  cursor: pointer;
-  ${props => props.side === "left" && css`
-    ::after{
-      content: "";
-      position: absolute;
-      width: 8px;
-      height: 8px;
-      border-bottom: 2px solid black;
-      border-left: 2px solid black;
-      top: 30%;
-      left: 35%;
-      transform: rotate(45deg);
-    }
-  `}
-  ${props => props.side === "right" && css`
-    ::after{
-      content: "";
-      position: absolute;
-      width: 8px;
-      height: 8px;
-      border-top: 2px solid black;
-      border-right: 2px solid black;
-      top: 30%;
-      left: 35%;
-      transform: rotate(45deg);
-    }
-  `}`
+
+
+

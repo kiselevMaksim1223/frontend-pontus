@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 
 type propsType = {
     direction?:"row" | "row-reverse" | "column" | "column-reverse"
@@ -9,6 +9,7 @@ type propsType = {
     columnGap?:string
     rowGap?:string
     textAlign?:"start" | "end" | "left" | "right" | "center" | "justify" | "match-parent"
+    media?: boolean
 }
 
 
@@ -22,4 +23,15 @@ export const FlexStyled = styled.div<propsType>`
   column-gap:${props => props.columnGap || "0"};
   row-gap: ${props => props.rowGap || "0"};
   text-align: ${props => props.textAlign || "start"};
+  
+  ${props => props.media && css`
+  @media (max-width: 950px){
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  
+  `}
+  
+  
 `

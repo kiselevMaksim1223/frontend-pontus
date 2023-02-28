@@ -3,21 +3,22 @@ import {StyledTitle} from "../../../../styled-components/Title";
 import {FlexStyled} from "../../../../styled-components/Flex";
 import {StyledText} from "../../../../styled-components/Text";
 import {LinkStyled} from "../../../../styled-components/Header/Nav/LinkStyled";
-import {StyledWrapper} from "../../../../styled-components/Wrapper";
+import {Button} from "../../../common/Button";
 
 export const Description = () => {
     return (
         <FlexStyled columnGap={"2em"} align={"center"}>
             <StyledTitle color={"white"}>Hotel Pontus</StyledTitle>
-            <StyledText width={"50%"} color={"white"}>
+            <StyledText width={"40%"} color={"white"}>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                <StyledWrapper padding={"0.3em 0"}>
+                <br/>
                     <LinkStyled type={"primary"}>+995 123 456 789</LinkStyled>
-                </StyledWrapper >
-                <StyledWrapper padding={"0.3em 0"}>
+                <br/>
                     <LinkStyled type={"primary"}>+995 123 456 789</LinkStyled>
-                </StyledWrapper>
             </StyledText>
+            <Button buttonType={"secondary"} margin={"0 0 0 auto"} onClick={() => {}}>
+                Text us please!
+            </Button>
         </FlexStyled>
     );
 };

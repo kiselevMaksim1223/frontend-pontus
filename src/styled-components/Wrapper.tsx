@@ -5,19 +5,20 @@ type propType = {
     padding?: string
     blackout?: boolean
     position?:string
-    width?:string
+    width?:string | string[]
     height?:string
     bottom?:string
     alignSelf?:string
     margin?:string
     lineHeight?:string
+    media?:boolean
 }
 
 export const StyledWrapper = styled.div<propType>`
   padding: ${props => props.padding};
   background-color: ${props => props.backgroundColor};
   position: ${props => props.position};
-  width: ${props => props.width};
+  width: ${props => props.width !== undefined ? props.width[0] : ""};
   height: ${props => props.height}
   bottom: ${props => props.bottom};
   align-self: ${props => props.alignSelf};
@@ -48,5 +49,11 @@ export const StyledWrapper = styled.div<propType>`
       }
   `
   }
-}
+  
+${props => props.media && css<propType>`
+  @media (max-width: 950px){
+   width: ${props => props.width ? props.width[1] : ""};
+    text-align: center;
+  }
+`}
 `

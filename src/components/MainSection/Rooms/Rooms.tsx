@@ -5,14 +5,18 @@ import {StyledTitle} from "../../../styled-components/Title";
 import {StyledText} from "../../../styled-components/Text";
 import {Carousel} from "./Carousel/Carousel";
 import {FlexStyled} from "../../../styled-components/Flex";
-import styled from "styled-components";
+import {CarouselItem} from "../../../styled-components/MainBlock/Rooms/Carousel/CarouselItemStyled";
+import one from "../../../img/Rooms/1.jpg"
+import two from "../../../img/Rooms/2.jpg"
+import three from "../../../img/Rooms/3.jpg"
 
 export const Rooms = () => {
     return (
         <StyledWrapper>
             <StyledContainer>
-                <FlexStyled>
-                    <StyledWrapper padding={"5px"} lineHeight={"1.6em"}>
+                <FlexStyled justify={"space-between"} media>
+                    <StyledWrapper padding={"5px"} lineHeight={"1.6em"} width={["40%", "85%"]} media>
+
                         <StyledTitle as={"h5"}>Rooms</StyledTitle>
                         <StyledText>
                             Multiple room options available, including:
@@ -21,10 +25,12 @@ export const Rooms = () => {
                             <br/>
                             Four beds per room
                         </StyledText>
+
                         <StyledTitle as={"h5"}>Perks</StyledTitle>
                         <StyledText>
                             TV, refrigerator, sofas to relax and hang out
                         </StyledText>
+
                         <StyledTitle as={"h5"}>
                             Relax and let us worry about your comfort
                         </StyledTitle>
@@ -36,11 +42,15 @@ export const Rooms = () => {
                             will
                             be happy to address them.
                         </StyledText>
+
                     </StyledWrapper>
                     <Carousel>
-                        <CarouselItem color={"black"}>Item1</CarouselItem>
-                        <CarouselItem color={"red"}>Item2</CarouselItem>
-                        <CarouselItem color={"blue"}>Item3</CarouselItem>
+                        <CarouselItem url={one} color={"black"}>Item1</CarouselItem>
+                        <CarouselItem url={two} color={"red"}>Item2</CarouselItem>
+                        <CarouselItem url={three} color={"blue"}>Item3</CarouselItem>
+                        {/*<CarouselItem src={one}/>*/}
+                        {/*<CarouselItem src={two}/>*/}
+                        {/*<CarouselItem src={three}/>*/}
                     </Carousel>
                 </FlexStyled>
             </StyledContainer>
@@ -50,15 +60,3 @@ export const Rooms = () => {
 
 
 
-type carouselItem = {
-    color?:string
-}
-
-export const PAGE_WIDTH = 600
-
-const CarouselItem = styled.div<carouselItem>`
-  background: ${props => props.color};
-  height: 100%;
-  min-width: ${PAGE_WIDTH}px;
-  max-width: ${PAGE_WIDTH}px;
-`
