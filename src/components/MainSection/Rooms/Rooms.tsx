@@ -6,9 +6,7 @@ import {StyledText} from "../../../styled-components/Text";
 import {Carousel} from "./Carousel/Carousel";
 import {FlexStyled} from "../../../styled-components/Flex";
 import {CarouselItem} from "../../../styled-components/MainBlock/Rooms/Carousel/CarouselItemStyled";
-import one from "../../../img/Rooms/1.jpg"
-import two from "../../../img/Rooms/2.jpg"
-import three from "../../../img/Rooms/3.jpg"
+import {sliderData} from "../../../api/sliderData";
 
 export const Rooms = () => {
     return (
@@ -45,9 +43,10 @@ export const Rooms = () => {
 
                     </StyledWrapper>
                     <Carousel>
-                        <CarouselItem url={one} color={"black"}>Item1</CarouselItem>
-                        <CarouselItem url={two} color={"red"}>Item2</CarouselItem>
-                        <CarouselItem url={three} color={"blue"}>Item3</CarouselItem>
+                        {sliderData.map(s => <CarouselItem url={s.img} />)}
+                        {/*<CarouselItem url={one} >Item1</CarouselItem>*/}
+                        {/*<CarouselItem url={two} >Item2</CarouselItem>*/}
+                        {/*<CarouselItem url={three}>Item3</CarouselItem>*/}
                         {/*<CarouselItem src={one}/>*/}
                         {/*<CarouselItem src={two}/>*/}
                         {/*<CarouselItem src={three}/>*/}

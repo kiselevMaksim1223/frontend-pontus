@@ -18,6 +18,7 @@ export const Carousel: FC<carouselType> = ({children}) => {
 
     //make a list of photos in future
     useEffect(() => {
+        debugger
         setPages(Children.map(children, child => child))
         console.log()
     }, [children])

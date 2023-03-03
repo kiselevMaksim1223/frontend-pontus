@@ -7,8 +7,11 @@ type propsType = {
 export const LinkStyled = styled.a<propsType>`
   position: relative;
   cursor: pointer;
+  text-decoration: none;
+  //color: #2A2E49;
   
  ${props => props.type === "primary" && css`
+  color: white;
   &:hover {
     ::after {
       content: '';
@@ -19,9 +22,11 @@ export const LinkStyled = styled.a<propsType>`
       width: 100%;
       height: 2px;
       background-color: white;
+      color: white;
     }
   `}
   ${props => props.type === "secondary" && css`
+   color: #2A2E49;
     &:hover {
      ::after {
       content: '';
@@ -32,6 +37,7 @@ export const LinkStyled = styled.a<propsType>`
       width: 100%;
       height: 2px;
       background-color: #2a2e49;
+      
      }
     }
   `}

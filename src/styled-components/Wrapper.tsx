@@ -51,8 +51,8 @@ export const StyledWrapper = styled.div<propType>`
   }
   
 ${props => props.media && css<propType>`
-  @media (max-width: 950px){
-   width: ${props => props.width ? props.width[1] : ""};
+  @media (max-width: 950px) {
+    width: ${props => props.width ? props.width[1] : ""};
     text-align: center;
   }
 `}
