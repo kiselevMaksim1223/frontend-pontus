@@ -1,17 +1,23 @@
 {
   "files": {
     "main.css": "/guest-house/static/css/main.073c9b0a.css",
-    "main.js": "/guest-house/static/js/main.52717d29.js",
+    "main.js": "/guest-house/static/js/main.04153df5.js",
     "static/js/787.5e450183.chunk.js": "/guest-house/static/js/787.5e450183.chunk.js",
     "static/media/back-yard2.jpg": "/guest-house/static/media/back-yard2.1c2e35a050f1fd310238.jpg",
+    "static/media/4.jpg": "/guest-house/static/media/4.40b8950718d3f246e36b.jpg",
+    "static/media/1.jpg": "/guest-house/static/media/1.b3ccdec803041b2a1307.jpg",
+    "static/media/10.jpg": "/guest-house/static/media/10.672745553053a664fae6.jpg",
+    "static/media/8.jpg": "/guest-house/static/media/8.56c5454aa13a95787069.jpg",
     "static/media/Pontus.jpg": "/guest-house/static/media/Pontus.c0da91856536a0d9df0c.jpg",
+    "static/media/close.svg": "/guest-house/static/media/close.4a495d0eeabe9f76d9c7f9d2aac38568.svg",
     "index.html": "/guest-house/index.html",
+    "static/media/burger.svg": "/guest-house/static/media/burger.be6e7dba804bcd609dabf007e7f683d0.svg",
     "main.073c9b0a.css.map": "/guest-house/static/css/main.073c9b0a.css.map",
-    "main.52717d29.js.map": "/guest-house/static/js/main.52717d29.js.map",
+    "main.04153df5.js.map": "/guest-house/static/js/main.04153df5.js.map",
     "787.5e450183.chunk.js.map": "/guest-house/static/js/787.5e450183.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.073c9b0a.css",
-    "static/js/main.52717d29.js"
+    "static/js/main.04153df5.js"
   ]
 }
