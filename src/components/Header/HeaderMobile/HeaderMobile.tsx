@@ -14,11 +14,11 @@ export const HeaderMobile = () => {
     const [open, setOpen] = useState<boolean>(false)
     const openHandler = () => {
         setOpen(true)
-        document.body.style.overflow = "hidden"
+        document.body.style.overflow = "hidden" //запрещаем скрол body при открытом бургер меню
     }
     const closeHandler = () => {
         setOpen(false)
-        document.body.style.overflow = "visible"
+        document.body.style.overflow = "visible" //разрешаем скрол body при открытом бургер меню
     }
 
     return (<>
