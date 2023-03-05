@@ -12,8 +12,14 @@ import {Logo} from "../HeaderDesktop/HeaderBottom/Logo/Logo";
 
 export const HeaderMobile = () => {
     const [open, setOpen] = useState<boolean>(false)
-    const openHandler = () => setOpen(true)
-    const closeHandler = () => setOpen(false)
+    const openHandler = () => {
+        setOpen(true)
+        document.body.style.overflow = "hidden"
+    }
+    const closeHandler = () => {
+        setOpen(false)
+        document.body.style.overflow = "visible"
+    }
 
     return (<>
             {
