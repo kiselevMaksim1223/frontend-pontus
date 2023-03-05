@@ -16,9 +16,8 @@ export const Carousel: FC<carouselType> = ({children}) => {
     const ref = useRef<HTMLDivElement | null>(null)
 
 
-    //make a list of photos in future
+    //make a list of photos
     useEffect(() => {
-        debugger
         setPages(Children.map(children, child => child))
         console.log()
     }, [children])

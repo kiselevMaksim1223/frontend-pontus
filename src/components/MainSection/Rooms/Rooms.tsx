@@ -42,14 +42,9 @@ export const Rooms = () => {
                         </StyledText>
 
                     </StyledWrapper>
+
                     <Carousel>
                         {sliderData.map(s => <CarouselItem url={s.img} />)}
-                        {/*<CarouselItem url={one} >Item1</CarouselItem>*/}
-                        {/*<CarouselItem url={two} >Item2</CarouselItem>*/}
-                        {/*<CarouselItem url={three}>Item3</CarouselItem>*/}
-                        {/*<CarouselItem src={one}/>*/}
-                        {/*<CarouselItem src={two}/>*/}
-                        {/*<CarouselItem src={three}/>*/}
                     </Carousel>
                 </FlexStyled>
             </StyledContainer>
