@@ -8,7 +8,9 @@ import {FlexStyled} from "../../../styled-components/Flex";
 import {OpenedMenu} from "../../../styled-components/Header/MobileHeader/OpenedMenu";
 import {LiStyled, UlStyled} from "../../../styled-components/Header/Nav/ULStyled";
 import {NavLinkStyled} from "../../../styled-components/commonComponents/NavLink";
-import {Logo} from "../HeaderDesktop/HeaderBottom/Logo/Logo";
+import {Logo} from "../../common/Logo/Logo";
+import logoStandart from "../../../img/Logo/pontusLogo.png"
+
 
 export const HeaderMobile = () => {
     const [open, setOpen] = useState<boolean>(false)
@@ -26,7 +28,7 @@ export const HeaderMobile = () => {
                 open
                     ? <OpenedMenu>
                         <Button onClick={closeHandler} bcImg={closeIcon} buttonType={"burger"} margin={"15px"}/>
-                        <Logo width={"220px"} margin={"5px"} onClick={closeHandler}/>
+                        <Logo src={logoStandart} width={"220px"} margin={"5px"} onClick={closeHandler}/>
                         <UlStyled isColumn>
                             <LiStyled isColumn><NavLinkStyled to={"/about"} linktype={"primary"} onClick={closeHandler}
                                                               fontSize={"large"}>About</NavLinkStyled></LiStyled>

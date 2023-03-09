@@ -50,11 +50,11 @@ export const StyledButton = styled.button<propsType>`
             &:active {
               border: 1px solid white;
               color: #2a2e49;
-              background: white;
+              background-color: transparent;
             }
             &:hover{
               border: 1px solid white;
-              
+              background-color: transparent;
             }
           `
   }

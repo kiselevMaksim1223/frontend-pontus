@@ -13,6 +13,7 @@
     "@types/randomcolor": "^0.5.7",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
+    "@types/uuid": "^9.0.1",
     "gh-pages": "^5.0.0",
     "google-map-react": "^2.2.0",
     "randomcolor": "^0.6.2",
