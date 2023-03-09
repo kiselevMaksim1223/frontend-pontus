@@ -1,23 +1,34 @@
 {
   "files": {
     "main.css": "/guest-house/static/css/main.073c9b0a.css",
-    "main.js": "/guest-house/static/js/main.d9aed03a.js",
+    "main.js": "/guest-house/static/js/main.ab9f7368.js",
     "static/js/787.5e450183.chunk.js": "/guest-house/static/js/787.5e450183.chunk.js",
+    "static/media/8.jpg": "/guest-house/static/media/8.56c5454aa13a95787069.jpg",
+    "static/media/9.jpg": "/guest-house/static/media/9.1fa475377102b0d74a5d.jpg",
+    "static/media/12.jpg": "/guest-house/static/media/12.19f92ef29ec17ea80b5f.jpg",
+    "static/media/7.jpg": "/guest-house/static/media/7.694d65f135717f6aafc4.jpg",
+    "static/media/14.jpg": "/guest-house/static/media/14.831d498be92b0053fadf.jpg",
+    "static/media/11.jpg": "/guest-house/static/media/11.dbb38db1ac803eccdf85.jpg",
+    "static/media/10.jpg": "/guest-house/static/media/10.672745553053a664fae6.jpg",
     "static/media/back-yard2.jpg": "/guest-house/static/media/back-yard2.1c2e35a050f1fd310238.jpg",
+    "static/media/13.jpg": "/guest-house/static/media/13.acfe036e5cd73a91d259.jpg",
+    "static/media/2.jpg": "/guest-house/static/media/2.970ab27ae4068f62638b.jpg",
+    "static/media/3.jpg": "/guest-house/static/media/3.c28e1f1c0ca6eac8e9b1.jpg",
     "static/media/4.jpg": "/guest-house/static/media/4.40b8950718d3f246e36b.jpg",
     "static/media/1.jpg": "/guest-house/static/media/1.b3ccdec803041b2a1307.jpg",
-    "static/media/10.jpg": "/guest-house/static/media/10.672745553053a664fae6.jpg",
-    "static/media/8.jpg": "/guest-house/static/media/8.56c5454aa13a95787069.jpg",
-    "static/media/Pontus.jpg": "/guest-house/static/media/Pontus.c0da91856536a0d9df0c.jpg",
+    "static/media/6.jpg": "/guest-house/static/media/6.b63e562f001a583e08c4.jpg",
+    "static/media/5.jpg": "/guest-house/static/media/5.9de4926ec93be054ffb4.jpg",
+    "static/media/pontusLogo.png": "/guest-house/static/media/pontusLogo.d75ffe9ee5e8f3520d0b.png",
+    "static/media/pontusPogoWhite.png": "/guest-house/static/media/pontusPogoWhite.62b2b9b2d5812b07fc64.png",
     "static/media/close.svg": "/guest-house/static/media/close.4a495d0eeabe9f76d9c7f9d2aac38568.svg",
     "index.html": "/guest-house/index.html",
     "static/media/burger.svg": "/guest-house/static/media/burger.be6e7dba804bcd609dabf007e7f683d0.svg",
     "main.073c9b0a.css.map": "/guest-house/static/css/main.073c9b0a.css.map",
-    "main.d9aed03a.js.map": "/guest-house/static/js/main.d9aed03a.js.map",
+    "main.ab9f7368.js.map": "/guest-house/static/js/main.ab9f7368.js.map",
     "787.5e450183.chunk.js.map": "/guest-house/static/js/787.5e450183.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.073c9b0a.css",
-    "static/js/main.d9aed03a.js"
+    "static/js/main.ab9f7368.js"
   ]
 }
