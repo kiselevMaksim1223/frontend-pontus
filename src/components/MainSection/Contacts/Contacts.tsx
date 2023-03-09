@@ -6,6 +6,7 @@ import ContactsBlock from "./ContactsBlock";
 import {GridWrapper} from "../../../styled-components/MainBlock/Contacts/GridWrapper";
 import {GoogleMapBlock} from "./GoogleMap/GoogleMapBlock";
 
+
 export const Contacts = () => {
     return (
         <StyledContainer>
@@ -14,6 +15,7 @@ export const Contacts = () => {
                 <GridWrapper gridTemplate={"33% 1fr"} gap={"2em"}>
                     <ContactsBlock/>
                     <GoogleMapBlock/>
+
                 </GridWrapper>
             </StyledWrapper>
         </StyledContainer>

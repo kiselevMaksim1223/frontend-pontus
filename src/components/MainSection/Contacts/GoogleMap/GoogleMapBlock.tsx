@@ -17,7 +17,7 @@ export const GoogleMapBlock = () => {
 
     return (
         <MapContainer>
-            <GoogleMapReact bootstrapURLKeys ={{key:API_KEY as string}} defaultCenter={defaultProps.center} defaultZoom={defaultProps.zoom}>
+            <GoogleMapReact bootstrapURLKeys ={{key:API_KEY as string}} defaultCenter={defaultProps.center} defaultZoom={defaultProps.zoom} yesIWantToUseGoogleMapApiInternals>
                 <MarkerOnMap text={"Pontus"} lat={41.816654} lng={41.776931} />
             </GoogleMapReact>
         </MapContainer>
