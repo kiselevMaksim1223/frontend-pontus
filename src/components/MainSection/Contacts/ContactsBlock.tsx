@@ -13,11 +13,13 @@ const ContactsBlock = () => {
                 <StyledTitle as={"h3"}>Address</StyledTitle>
                 <StyledText>Shota Rustaveli 75 , Kobuleti, Georgia</StyledText>
             </ContactInfoWrapper>
+
             <ContactInfoWrapper>
                 <StyledTitle as={"h3"}>Phone</StyledTitle>
                 <LinkStyled type={"secondary"}>+995 123 456 789 </LinkStyled>
                 <span>(What`s up, Viber)</span>
             </ContactInfoWrapper>
+
             <ContactInfoWrapper>
                 <StyledTitle as={"h3"}>E-mail</StyledTitle>
                 <LinkStyled type={"secondary"}

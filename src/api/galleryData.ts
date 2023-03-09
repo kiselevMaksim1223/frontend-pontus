@@ -14,7 +14,13 @@ import photo12 from "../img/Gallery/12.jpg"
 import photo13 from "../img/Gallery/13.jpg"
 import photo14 from "../img/Gallery/14.jpg"
 
-export const galleryData = [
+export type galleryItemType = {
+    id:string
+    img:string
+    proportions: string
+}
+
+export const galleryData:galleryItemType[] = [
     {id:v1(), img:photo1, proportions: "wide"},
     {id:v1(), img:photo2, proportions: "wide"},
     {id:v1(), img:photo3, proportions: "wide"},
