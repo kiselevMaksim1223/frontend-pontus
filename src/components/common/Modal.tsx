@@ -32,8 +32,8 @@ const ModalWrapper = styled.div<activeModalType>`
   height: 100vh;
   width: 100vw;
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 0%;
+  left: 0%;
   background-color: rgba(0, 0, 0, 0.8);
   display: flex;
   align-items: center;
@@ -55,6 +55,9 @@ const ModalContent = styled.div<activeModalType>`
   border-radius: 12px;
   transform: scale(0.1);
   transition: .4s all;
+  -webkit-transition:.4s all;
+  -moz-transition:.4s all;
+  -o-transition: .4s all;
   
   @media(max-width: 700px){
     width: 80%;
