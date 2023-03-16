@@ -2,12 +2,12 @@ import React, {FC, ReactNode} from 'react';
 import styled, {css} from "styled-components";
 
 type modalPropsType = {
-    active:boolean
-    setActive: (active:boolean) => void
-    children:ReactNode
+    active: boolean
+    setActive: (active: boolean) => void
+    children: ReactNode
 }
 
-const Modal:FC<modalPropsType> = ({active, setActive, children}) => {
+const Modal: FC<modalPropsType> = ({active, setActive, children}) => {
 
     const onClickHandler = () => {
         setActive(false)
@@ -16,7 +16,7 @@ const Modal:FC<modalPropsType> = ({active, setActive, children}) => {
     return (
         <ModalWrapper active={active} onClick={onClickHandler}>
             <ModalContent active={active} onClick={(e => e.stopPropagation())}>
-                {children && <ModalImg src={children as string}  alt={"Pictures"}/>}
+                {children && <ModalImg src={children as string} alt={"Pictures"}/>}
             </ModalContent>
         </ModalWrapper>
     );
@@ -32,15 +32,15 @@ const ModalWrapper = styled.div<activeModalType>`
   height: 100vh;
   width: 100vw;
   position: fixed;
-  top: 0%;
-  left: 0%;
+  top: 0;
+  left: 0;
   background-color: rgba(0, 0, 0, 0.8);
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 0;
   pointer-events: none;
-  
+
   ${props => props.active && css`
     opacity: 1;
     pointer-events: all;
@@ -55,21 +55,21 @@ const ModalContent = styled.div<activeModalType>`
   border-radius: 12px;
   transform: scale(0.1);
   transition: .4s all;
-  -webkit-transition:.4s all;
-  -moz-transition:.4s all;
+  -webkit-transition: .4s all;
+  -moz-transition: .4s all;
   -o-transition: .4s all;
-  
-  @media(max-width: 700px){
+
+  @media (max-width: 700px) {
     width: 80%;
     height: auto;
   }
-  
+
   ${props => props.active && css`
     transform: scale(1);
   `
-}`
+  }`
 
-const ModalImg = styled.img` 
+const ModalImg = styled.img`
   height: 100%;
   width: 100%;
   object-fit: cover;

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {StyledWrapper} from "../../../styled-components/Wrapper";
 import {StyledContainer} from "../../../styled-components/Container";
 import {FlexStyled} from "../../../styled-components/Flex";
@@ -9,41 +9,51 @@ import {StyledTitle} from "../../../styled-components/Title";
 import Modal from "../../common/Modal";
 
 export const Gallery = () => {
+        //=====================================FOR SHOWING TITLE FOR COMPONENT==========================================
         const location = useLocation()
-        const pathName = location.pathname.replace("/", "")[0].toUpperCase() + location.pathname.replace("/", "").slice(1)
+        const pathName = location.pathname.replace("/", "")[0].toUpperCase()
+                       + location.pathname.replace("/", "").slice(1)
 
-        const [activeModal, setActiveModal] = useState<boolean>(false)
+        //=====================================TO DISPLAY CHOSEN PICTURES ON MODAL======================================
         const [currentPictures, setCurrentPictures] = useState<string | null>(null)
+        //=====================================FOR SHOWING MODAL AND STOP SCROLLING=====================================
+        const [activeModal, setActiveModal] = useState<boolean>(false)
 
+        useEffect(()=>{
+            activeModal && (document.body.style.overflow = "hidden")
+            !activeModal && (document.body.style.overflow = "unset")
 
-        const onClickOpenModalHandler = (id:string) => {
+        }, [activeModal])
+        //==============================================================================================================
+
+        const onClickOpenModalHandler = (id: string) => {
             setActiveModal(true)
             console.log(galleryData.filter(i => i.id === id)[0].img)
             setCurrentPictures(galleryData.filter(i => i.id === id)[0].img)
         }
         return (<>
-                <Modal active = {activeModal} setActive = {setActiveModal}>
+                <Modal active={activeModal} setActive={setActiveModal}>
                     {currentPictures}
                 </Modal>
                 : <StyledWrapper>
-                    <StyledContainer>
-                        <StyledTitle as={"h2"} fontSize={"65px"} margin={"1em 0"} textAlign={"center"} color={"#2A2E49"}>
-                            {pathName}
-                        </StyledTitle>
-                        <FlexStyled media flexWrap={"wrap"} columnGap={"2em"} rowGap={"2em"} margin={"3em auto"}
-                                    align={"center"} justify={"space-between"}>
-                            {galleryData.map(i => {
-                                return (
-                                    <GalleryItemWrapper onClick={() => onClickOpenModalHandler(i.id)}>
-                                        <GalleryItem src={i.img}
-                                                     width={i.proportions === "wide" ? 240 : 180}
-                                                     height={i.proportions === "wide" ? 180 : 240}/>
-                                    </GalleryItemWrapper>
-                                )
-                            })}
-                        </FlexStyled>
-                    </StyledContainer>
-                </StyledWrapper>
+                <StyledContainer>
+                    <StyledTitle as={"h2"} fontSize={"65px"} margin={"1em 0"} textAlign={"center"} color={"#2A2E49"}>
+                        {pathName}
+                    </StyledTitle>
+                    <FlexStyled media flexWrap={"wrap"} columnGap={"2em"} rowGap={"2em"} margin={"3em auto"}
+                                align={"center"} justify={"space-between"}>
+                        {galleryData.map(i => {
+                            return (
+                                <GalleryItemWrapper onClick={() => onClickOpenModalHandler(i.id)}>
+                                    <GalleryItem src={i.img}
+                                                 width={i.proportions === "wide" ? 240 : 180}
+                                                 height={i.proportions === "wide" ? 180 : 240}/>
+                                </GalleryItemWrapper>
+                            )
+                        })}
+                    </FlexStyled>
+                </StyledContainer>
+            </StyledWrapper>
             </>
         );
     }
