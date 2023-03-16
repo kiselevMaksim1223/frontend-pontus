@@ -11,7 +11,7 @@ type propType = {
     alignSelf?:string
     margin?:string
     lineHeight?:string
-    media?:boolean
+    isMedia?:boolean
 }
 
 export const StyledWrapper = styled.div<propType>`
@@ -50,7 +50,7 @@ export const StyledWrapper = styled.div<propType>`
   `
   }
   
-${props => props.media && css<propType>`
+${props => props.isMedia && css<propType>`
   @media (max-width: 950px) {
     width: ${props => props.width ? props.width[1] : ""};
     text-align: center;

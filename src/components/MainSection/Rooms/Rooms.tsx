@@ -13,7 +13,7 @@ export const Rooms = () => {
         <StyledWrapper>
             <StyledContainer>
                 <FlexStyled justify={"space-between"} isMedia>
-                    <StyledWrapper padding={"5px"} lineHeight={"1.6em"} width={["40%", "85%"]} media>
+                    <StyledWrapper padding={"5px"} lineHeight={"1.6em"} width={["40%", "85%"]} isMedia>
 
                         <StyledTitle as={"h5"}>Rooms</StyledTitle>
                         <StyledText>
@@ -44,7 +44,7 @@ export const Rooms = () => {
                     </StyledWrapper>
 
                     <Carousel>
-                        {sliderData.map(s => <CarouselItem url={s.img} />)}
+                        {sliderData.map(s => <CarouselItem key={s.id} url={s.img} />)}
                     </Carousel>
                 </FlexStyled>
             </StyledContainer>
