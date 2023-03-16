@@ -37,14 +37,14 @@ export const Gallery = () => {
                 </Modal>
                 : <StyledWrapper>
                 <StyledContainer>
-                    <StyledTitle as={"h2"} fontSize={"65px"} margin={"1em 0"} textAlign={"center"} color={"#2A2E49"}>
+                    <StyledTitle as={"h2"} fontSize={"65px"}  textAlign={"center"} color={"#2A2E49"}>
                         {pathName}
                     </StyledTitle>
                     <FlexStyled media flexWrap={"wrap"} columnGap={"2em"} rowGap={"2em"} margin={"3em auto"}
                                 align={"center"} justify={"space-between"}>
                         {galleryData.map(i => {
                             return (
-                                <GalleryItemWrapper onClick={() => onClickOpenModalHandler(i.id)}>
+                                <GalleryItemWrapper key={i.id} onClick={() => onClickOpenModalHandler(i.id)}>
                                     <GalleryItem src={i.img}
                                                  width={i.proportions === "wide" ? 240 : 180}
                                                  height={i.proportions === "wide" ? 180 : 240}/>
