@@ -9,7 +9,7 @@ type propsType = {
     columnGap?:string
     rowGap?:string
     textAlign?:"start" | "end" | "left" | "right" | "center" | "justify" | "match-parent"
-    media?: boolean
+    isMedia?: boolean
     flexWrap?:"nowrap" | "wrap" | "wrap-reverse"
 }
 
@@ -26,7 +26,7 @@ export const FlexStyled = styled.div<propsType>`
   text-align: ${props => props.textAlign || "start"};
   flex-wrap: ${props => props.flexWrap};
   
-  ${props => props.media && css`
+  ${props => props.isMedia && css`
   @media (max-width: 950px){
     flex-direction: column;
     align-items: center;

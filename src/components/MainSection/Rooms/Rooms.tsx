@@ -12,7 +12,7 @@ export const Rooms = () => {
     return (
         <StyledWrapper>
             <StyledContainer>
-                <FlexStyled justify={"space-between"} media>
+                <FlexStyled justify={"space-between"} isMedia>
                     <StyledWrapper padding={"5px"} lineHeight={"1.6em"} width={["40%", "85%"]} media>
 
                         <StyledTitle as={"h5"}>Rooms</StyledTitle>

@@ -24,7 +24,7 @@ export const Footer = () => {
                         </FlexStyled>
                     </StyledWrapper>
                     <div>
-                        <StyledText>@2023 Hotel Pontus. All right reserved</StyledText>
+                        <StyledText>c2023 Hotel Pontus. All right reserved</StyledText>
                     </div>
                 </FlexStyled>
             </StyledContainer>

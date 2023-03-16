@@ -28,19 +28,21 @@ export const Gallery = () => {
 
         const onClickOpenModalHandler = (id: string) => {
             setActiveModal(true)
-            console.log(galleryData.filter(i => i.id === id)[0].img)
-            setCurrentPictures(galleryData.filter(i => i.id === id)[0].img)
+            const currentImg = galleryData.find(i => i.id === id)
+            if (currentImg){
+                setCurrentPictures(currentImg.img)
+            }
         }
         return (<>
                 <Modal active={activeModal} setActive={setActiveModal}>
                     {currentPictures}
                 </Modal>
-                : <StyledWrapper>
+                <StyledWrapper>
                 <StyledContainer>
                     <StyledTitle as={"h2"} fontSize={"65px"}  textAlign={"center"} color={"#2A2E49"}>
                         {pathName}
                     </StyledTitle>
-                    <FlexStyled media flexWrap={"wrap"} columnGap={"2em"} rowGap={"2em"} margin={"3em auto"}
+                    <FlexStyled isMedia flexWrap={"wrap"} columnGap={"2em"} rowGap={"2em"} margin={"3em auto"}
                                 align={"center"} justify={"space-between"}>
                         {galleryData.map(i => {
                             return (
@@ -67,7 +69,6 @@ const GalleryItem = styled.img`
 const GalleryItemWrapper = styled.div`
   cursor: pointer;
   transition: .3s;
-
   :hover {
     transform: scale(1.1);
 
