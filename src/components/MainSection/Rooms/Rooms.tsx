@@ -18,7 +18,7 @@ export const Rooms = () => {
                         {roomsDescriptionTitles.map((t => {
                             return (<>
                                     <StyledTitle key={t.id} as={"h4"}>{t.title}</StyledTitle>
-                                    <ul>
+                                    <ul style={{listStyleType:"none"}} >
                                         {roomsDescriptions[t.id].map(d => {
                                             return(
                                                 <li key={d.id}>{d.description}</li>
@@ -28,35 +28,6 @@ export const Rooms = () => {
                                 </>
                             )
                         }))}
-
-
-                        {/*<StyledTitle as={"h5"}>Rooms</StyledTitle>*/}
-                        {/*<StyledText>*/}
-                        {/*    Multiple room options available, including:*/}
-                        {/*</StyledText>*/}
-                        {/*<StyledText>*/}
-                        {/*    Single master suite*/}
-                        {/*</StyledText>*/}
-                        {/*<StyledText>*/}
-                        {/*    Four beds per room*/}
-                        {/*</StyledText>*/}
-
-                        {/*<StyledTitle as={"h5"}>Perks</StyledTitle>*/}
-                        {/*<StyledText>*/}
-                        {/*    TV, refrigerator, sofas to relax and hang out*/}
-                        {/*</StyledText>*/}
-
-                        {/*<StyledTitle as={"h5"}>*/}
-                        {/*    Relax and let us worry about your comfort*/}
-                        {/*</StyledTitle>*/}
-                        {/*<StyledText>*/}
-                        {/*    At Hotel Pontus, you have a variety of rooms to fit your needs. Starting from a single*/}
-                        {/*    room, up to 4 beds per room,*/}
-                        {/*    There is a good chance we will have something suitable for you.*/}
-                        {/*    If you have any special accomodation requirements, please feel free to contact us, and we*/}
-                        {/*    will be happy to address them.*/}
-                        {/*</StyledText>*/}
-
                     </StyledWrapper>
 
                     <Carousel>
@@ -67,8 +38,4 @@ export const Rooms = () => {
             </StyledContainer>
         </StyledWrapper>
     );
-}
-    ;
-
-
-
+};

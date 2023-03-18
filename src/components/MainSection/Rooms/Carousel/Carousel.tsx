@@ -29,7 +29,7 @@ export const Carousel: FC<carouselType> = ({children}) => {
         if (ref.current) {
             setPhotoWidth(ref.current.offsetWidth)
         }
-    })
+    }, [photoWidth, offset])
 
     //slider to the right side
     const rightSlideHandle = () => {
