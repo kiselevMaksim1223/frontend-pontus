@@ -28,7 +28,6 @@ export const Carousel: FC<carouselType> = ({children}) => {
     useEffect(() => {
         if (ref.current) {
             setPhotoWidth(ref.current.offsetWidth)
-            console.log(photoWidth)
         }
     })
 
