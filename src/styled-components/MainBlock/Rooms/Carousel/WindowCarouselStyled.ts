@@ -5,11 +5,6 @@ export const WindowCarousel = styled.div`
   width: 100%;
   overflow: hidden;
   
-  //@media (max-width: 950px) {
-  //  height: 300px;
-  //  min-height: 200px;
-  //  width: 90%;
-  //}
   @media (max-width: 600px) {
     height: 100%;
     min-height: 150px;

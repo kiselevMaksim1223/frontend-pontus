@@ -2,9 +2,8 @@ import styled from "styled-components";
 
 export const CarouselMainContainer = styled.div`
   flex: 1 0 auto;
-  //min-width: 600px;
-  //max-width: 600px;
-  width: 600px;
+  min-width: 600px;
+  max-width: 600px;
   min-height: 380px;
   
   display: flex;
@@ -14,8 +13,7 @@ export const CarouselMainContainer = styled.div`
 
   @media (max-width: 600px){
     flex: 1 1 auto;
-    //width: 100%;
-    width: auto;
+    min-width: auto;
     height: 200px;
     min-height: auto;
   }
