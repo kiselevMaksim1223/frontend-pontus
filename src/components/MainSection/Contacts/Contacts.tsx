@@ -11,7 +11,7 @@ export const Contacts = () => {
     return (
         <StyledContainer>
             <StyledWrapper>
-                <StyledTitle as={"h2"} color={"#2A2E49"} margin={"1em 0"}>Contact information</StyledTitle>
+                <StyledTitle as={"h2"} color={"#2A2E49"} margin={"0 0 1em 0"} textAlign={"center"} fontSize={"45px"}>Contact information</StyledTitle>
                 <GridWrapper gridTemplate={"33% 1fr"} gap={"2em"}>
                     <ContactsBlock/>
                     <GoogleMapBlock/>

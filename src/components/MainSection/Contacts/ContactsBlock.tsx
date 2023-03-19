@@ -30,6 +30,7 @@ const ContactsBlock = () => {
                                  href={"https://www.google.com/maps/dir//Hotel+Pontus,+75+Shota+Rustaveli+street,+Kobuleti+6200/@41.8163019,41.775987,17.64z/data=!4m9!4m8!1m0!1m5!1m1!1s0x405d77fe9fbc9a3d:0x802ae76dca741152!2m2!1d41.7769898!2d41.8166034!3e2"}>
                     Directions
                 </DirectionButton>
+
         </ContactInfoContainer>
 
     );

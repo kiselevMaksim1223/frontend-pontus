@@ -1,12 +1,8 @@
 import React, {Children, FC, ReactNode, useEffect, useRef, useState} from 'react';
 import {Arrow} from "../../../../styled-components/MainBlock/Rooms/Carousel/ArrowStyled";
-import {
-    CarouselMainContainer
-} from "../../../../styled-components/MainBlock/Rooms/Carousel/CarouselMainContainerStyled";
+import {CarouselMainContainer} from "../../../../styled-components/MainBlock/Rooms/Carousel/CarouselMainContainerStyled";
 import {WindowCarousel} from "../../../../styled-components/MainBlock/Rooms/Carousel/WindowCarouselStyled";
-import {
-    AllCarouselPageCont
-} from "../../../../styled-components/MainBlock/Rooms/Carousel/AllCarouselPageConteinerStyled";
+import {AllCarouselPageCont} from "../../../../styled-components/MainBlock/Rooms/Carousel/AllCarouselPageConteinerStyled";
 
 type carouselType = {
     children?: ReactNode

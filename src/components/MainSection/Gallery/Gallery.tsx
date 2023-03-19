@@ -39,7 +39,7 @@ export const Gallery = () => {
                 </Modal>
                 <StyledWrapper>
                 <StyledContainer>
-                    <StyledTitle as={"h2"} fontSize={"65px"}  textAlign={"center"} color={"#2A2E49"}>
+                    <StyledTitle as={"h2"} fontSize={"45px"}  textAlign={"center"} color={"#2A2E49"}>
                         {pathName}
                     </StyledTitle>
                     <FlexStyled isMedia flexWrap={"wrap"} columnGap={"2em"} rowGap={"2em"} margin={"3em auto"}
