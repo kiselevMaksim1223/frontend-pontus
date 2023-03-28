@@ -16,7 +16,8 @@ const Modal: FC<modalPropsType> = ({active, setActive, children}) => {
     return (
         <ModalWrapper active={active} onClick={onClickHandler}>
             <ModalContent active={active} onClick={(e => e.stopPropagation())}>
-                {children && <ModalImg src={children as string} alt={"Pictures"}/>}
+                {/*{children && <ModalImg src={children as string} alt={"Pictures"}/>}*/}
+                {children}
             </ModalContent>
         </ModalWrapper>
     );
@@ -68,9 +69,3 @@ const ModalContent = styled.div<activeModalType>`
     transform: scale(1);
   `
   }`
-
-const ModalImg = styled.img`
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-`

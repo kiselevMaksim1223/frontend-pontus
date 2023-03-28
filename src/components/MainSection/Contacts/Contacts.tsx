@@ -15,7 +15,6 @@ export const Contacts = () => {
                 <GridWrapper gridTemplate={"33% 1fr"} gap={"2em"}>
                     <ContactsBlock/>
                     <GoogleMapBlock/>
-
                 </GridWrapper>
             </StyledWrapper>
         </StyledContainer>

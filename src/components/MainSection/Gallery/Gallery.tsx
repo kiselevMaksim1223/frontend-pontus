@@ -19,7 +19,7 @@ export const Gallery = () => {
         //=====================================FOR SHOWING MODAL AND STOP SCROLLING=====================================
         const [activeModal, setActiveModal] = useState<boolean>(false)
 
-        useEffect(()=>{
+        useEffect(()=>{                      //scroll disable then modal window open
             activeModal && (document.body.style.overflow = "hidden")
             !activeModal && (document.body.style.overflow = "unset")
 
@@ -35,7 +35,8 @@ export const Gallery = () => {
         }
         return (<>
                 <Modal active={activeModal} setActive={setActiveModal}>
-                    {currentPictures}
+                    {/*{currentPictures}*/}
+                    <ModalImg src={currentPictures as string} alt={"Pictures"}/>
                 </Modal>
                 <StyledWrapper>
                 <StyledContainer>
@@ -75,3 +76,9 @@ const GalleryItemWrapper = styled.div`
   }
 `
 
+
+const ModalImg = styled.img`
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+`
