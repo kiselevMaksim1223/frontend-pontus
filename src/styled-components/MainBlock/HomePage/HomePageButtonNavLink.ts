@@ -1,19 +1,21 @@
 import styled from "styled-components";
-import {NavLink} from "react-router-dom";
 
-export const ButtonLink = styled(NavLink)`
+
+export const ButtonLink = styled.button`
   position: relative;
   border-radius: 1em;
   cursor: pointer;
   text-decoration: none;
-  padding: 0.7em 2.5em;
-  opacity: 0.8;
-  transition: opacity .2s ease-in-out;
+  padding: 1em 5em;
+  opacity: 0.9;
   background: #2a2e49;
   color: white;
   z-index: 5;
+  font-size:18px;
   :hover{
     opacity: 0.95;
-    transition: opacity .2s ease-in-out;
+  }
+  @media(min-width: 750px){
+    display: none;
   }
 `

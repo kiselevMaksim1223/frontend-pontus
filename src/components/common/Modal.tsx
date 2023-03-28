@@ -1,5 +1,6 @@
-import React, {FC, ReactNode} from 'react';
+import React, {FC, ReactNode, useEffect} from 'react';
 import styled, {css} from "styled-components";
+
 
 type modalPropsType = {
     active: boolean
@@ -7,16 +8,22 @@ type modalPropsType = {
     children: ReactNode
 }
 
-const Modal: FC<modalPropsType> = ({active, setActive, children}) => {
+const Modal: FC<modalPropsType> = ({ active, setActive, children}) => {
 
     const onClickHandler = () => {
         setActive(false)
     }
+
+    useEffect(()=>{                      //scroll disable then modal window open
+        active && (document.body.style.overflow = "hidden")
+        !active && (document.body.style.overflow = "overlay")
+    }, [active])
+
+
     console.log(children)
     return (
         <ModalWrapper active={active} onClick={onClickHandler}>
             <ModalContent active={active} onClick={(e => e.stopPropagation())}>
-                {/*{children && <ModalImg src={children as string} alt={"Pictures"}/>}*/}
                 {children}
             </ModalContent>
         </ModalWrapper>
@@ -41,7 +48,20 @@ const ModalWrapper = styled.div<activeModalType>`
   justify-content: center;
   opacity: 0;
   pointer-events: none;
-
+  ::after,::before {
+    content: "";
+    position: absolute;
+    top: 7%;
+    right: 12%;
+    width: 40px;
+    height: 3px;
+    transform: rotate(45deg);
+    background: #ffffff;
+  }
+  ::before{
+    transform: rotate(-45deg);
+  }
+  
   ${props => props.active && css`
     opacity: 1;
     pointer-events: all;
@@ -59,9 +79,10 @@ const ModalContent = styled.div<activeModalType>`
   -webkit-transition: .4s all;
   -moz-transition: .4s all;
   -o-transition: .4s all;
+  
 
   @media (max-width: 700px) {
-    width: 80%;
+    //width: auto;
     height: auto;
   }
 

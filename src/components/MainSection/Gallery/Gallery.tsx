@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import {StyledWrapper} from "../../../styled-components/Wrapper";
 import {StyledContainer} from "../../../styled-components/Container";
 import {FlexStyled} from "../../../styled-components/Flex";
@@ -18,12 +18,6 @@ export const Gallery = () => {
         const [currentPictures, setCurrentPictures] = useState<string | null>(null)
         //=====================================FOR SHOWING MODAL AND STOP SCROLLING=====================================
         const [activeModal, setActiveModal] = useState<boolean>(false)
-
-        useEffect(()=>{                      //scroll disable then modal window open
-            activeModal && (document.body.style.overflow = "hidden")
-            !activeModal && (document.body.style.overflow = "unset")
-
-        }, [activeModal])
         //==============================================================================================================
 
         const onClickOpenModalHandler = (id: string) => {
@@ -35,12 +29,11 @@ export const Gallery = () => {
         }
         return (<>
                 <Modal active={activeModal} setActive={setActiveModal}>
-                    {/*{currentPictures}*/}
                     <ModalImg src={currentPictures as string} alt={"Pictures"}/>
                 </Modal>
                 <StyledWrapper>
                 <StyledContainer>
-                    <StyledTitle as={"h2"} fontSize={"45px"}  textAlign={"center"} color={"#2A2E49"}>
+                    <StyledTitle as={"h2"} fontSize={"45px"} textAlign={"center"} color={"#2A2E49"}>
                         {pathName}
                     </StyledTitle>
                     <FlexStyled isMedia flexWrap={"wrap"} columnGap={"2em"} rowGap={"2em"} margin={"3em auto"}
@@ -75,7 +68,6 @@ const GalleryItemWrapper = styled.div`
 
   }
 `
-
 
 const ModalImg = styled.img`
   height: 100%;
