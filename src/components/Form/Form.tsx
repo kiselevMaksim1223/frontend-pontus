@@ -1,6 +1,7 @@
 import React from 'react';
 import {SubmitHandler, useForm} from "react-hook-form";
 import styled from "styled-components";
+import axios from "axios";
 
 type formType = {
     name: string
@@ -10,12 +11,27 @@ type formType = {
 
 export const Form = () => {
 
-    const {register, handleSubmit, formState: {errors}} = useForm<formType>();
+    const {
+        register, //includes name, onChange, onBlur, ref
+        handleSubmit, //(data: Object, e?: Event) => Promise<void>
+        formState: {errors} //formState contains info about form state (errors, isDirty, isSubmitted...)
+    } = useForm<formType>()
+
     const onSubmit: SubmitHandler<formType> = data => {
         console.log(data)
-
+        axios.post("http://localhost1/public/index.php", data, {
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded' //если отправили данные не в json
+            }
+        })
+            .then((res) => {
+                console.log(res.data)
+            })
+            .catch((e) => {
+                console.log(e)
+            })
     };
-    console.log(errors)
+
     return (
         <FormContainerStyled>
             <form onSubmit={handleSubmit(onSubmit)}>
@@ -43,8 +59,11 @@ export const Form = () => {
                         <label htmlFor="email">Email</label>
                     </Col25Styled>
                     <Col100Styled>
-                        <InputStyled {...register("email", {required: "This field is required"})} id="email"
-                                     placeholder="Your email.."/>
+                        <InputStyled {...register("email",
+                            {required: "This field is required"})}
+                                     id="email"
+                                     placeholder="Your email.."
+                        />
                     </Col100Styled>
                     <span>{errors.email?.message}</span>
                 </RowStyled>
@@ -54,8 +73,16 @@ export const Form = () => {
                         <label htmlFor="message">Message</label>
                     </Col25Styled>
                     <Col100Styled>
-                        <TextAreaStyled {...register("message", {required: "This field is required"})} id="message"
-                                        placeholder="Write your message.."/>
+                        <TextAreaStyled {...register("message", {
+                            required: "This field is required",
+                            minLength: {
+                                value: 5,
+                                message: "Your message at least should be 5 symbols "
+                            }
+                        })}
+                                        id="message"
+                                        placeholder="Write your message.."
+                        />
                     </Col100Styled>
                     <span>{errors.message?.message}</span>
                 </RowStyled>
