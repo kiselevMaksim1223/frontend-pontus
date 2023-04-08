@@ -17,9 +17,10 @@ export const Form = () => {
         formState: {errors} //formState contains info about form state (errors, isDirty, isSubmitted...)
     } = useForm<formType>()
 
+
     const onSubmit: SubmitHandler<formType> = data => {
         console.log(data)
-        axios.post("http://localhost1/public/index.php", data, {
+        axios.post("https://pontushotel.000webhostapp.com/public/", data, {
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded' //если отправили данные не в json
             }
@@ -28,9 +29,9 @@ export const Form = () => {
                 console.log(res.data)
             })
             .catch((e) => {
-                console.log(e)
+                alert(e.message)
             })
-    };
+    }
 
     return (
         <FormContainerStyled>
