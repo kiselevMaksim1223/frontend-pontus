@@ -1,7 +1,6 @@
 import React, {FC, ReactNode, useEffect} from 'react';
 import styled, {css} from "styled-components";
 
-
 type modalPropsType = {
     active: boolean
     setActive: (active: boolean) => void
@@ -10,7 +9,7 @@ type modalPropsType = {
 
 const Modal: FC<modalPropsType> = ({ active, setActive, children}) => {
 
-    const onClickHandler = () => {
+    const onMouseDownHandler = () => {
         setActive(false)
     }
 
@@ -22,8 +21,8 @@ const Modal: FC<modalPropsType> = ({ active, setActive, children}) => {
 
     console.log(children)
     return (
-        <ModalWrapper active={active} onClick={onClickHandler}>
-            <ModalContent active={active} onClick={(e => e.stopPropagation())}>
+        <ModalWrapper active={active} onMouseDown={onMouseDownHandler}>
+            <ModalContent active={active} onMouseDown={(e => e.stopPropagation())}>
                 {children}
             </ModalContent>
         </ModalWrapper>
@@ -48,7 +47,8 @@ const ModalWrapper = styled.div<activeModalType>`
   justify-content: center;
   opacity: 0;
   pointer-events: none;
-  ::after,::before {
+
+  ::after, ::before {
     content: "";
     position: absolute;
     top: 7%;
@@ -57,12 +57,14 @@ const ModalWrapper = styled.div<activeModalType>`
     height: 3px;
     transform: rotate(45deg);
     background: #ffffff;
+    cursor: pointer;
   }
-  ::before{
+
+  ::before {
     transform: rotate(-45deg);
   }
-  
-  ${props => props.active && css`
+
+  ${({active}) => active && css`
     opacity: 1;
     pointer-events: all;
     z-index: 100;
@@ -76,10 +78,6 @@ const ModalContent = styled.div<activeModalType>`
   border-radius: 12px;
   transform: scale(0.1);
   transition: .4s all;
-  -webkit-transition: .4s all;
-  -moz-transition: .4s all;
-  -o-transition: .4s all;
-  
 
   @media (max-width: 700px) {
     //width: auto;

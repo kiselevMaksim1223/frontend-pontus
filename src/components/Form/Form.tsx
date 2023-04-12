@@ -1,35 +1,57 @@
-import React from 'react';
+import React, {FC} from 'react';
 import {SubmitHandler, useForm} from "react-hook-form";
 import styled from "styled-components";
-import axios from "axios";
+import {emailApi} from "../../api/email-api";
+import * as yup from "yup";
+import {yupResolver} from "@hookform/resolvers/yup";
 
-type formType = {
+export type formType = {
     name: string
     email: string
     message: string
 }
 
-export const Form = () => {
+const schema = yup.object().shape({
+    name: yup.string()
+        .min(2, "Min length is 2")
+        .required("Name is required")
+    ,
+    email: yup.string()
+        .email("Invalid email address")
+        .matches(
+            /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+            "Invalid email address format"
+        )
+        .required("Email is required"),
+    message: yup.string()
+        .min(7, "Min length is 7")
+        .required("Message is required")
+
+});
+
+export const Form:FC = () => {
 
     const {
         register, //includes name, onChange, onBlur, ref
         handleSubmit, //(data: Object, e?: Event) => Promise<void>
-        formState: {errors} //formState contains info about form state (errors, isDirty, isSubmitted...)
-    } = useForm<formType>()
-
+        formState: {errors}, //formState contains info about form state (errors, isDirty, isSubmitted...)
+        reset
+    } = useForm<formType>({
+        resolver: yupResolver(schema)
+    })
 
     const onSubmit: SubmitHandler<formType> = data => {
         console.log(data)
-        axios.post("https://pontushotel.000webhostapp.com/public/", data, {
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded' //если отправили данные не в json
-            }
-        })
+        emailApi.sendMail(data)
             .then((res) => {
-                console.log(res.data)
+                console.log(typeof res.data)
+                alert(res.data)
             })
             .catch((e) => {
                 alert(e.message)
+            })
+            .finally(()=>{
+                reset()
             })
     }
 
@@ -43,16 +65,12 @@ export const Form = () => {
                     </Col25Styled>
                     <Col100Styled>
                         <InputStyled
-                            {...register("name",
-                                {
-                                    required: "This field is required",
-                                    minLength: {value: 3, message: "Min length is 3"}
-                                })}
+                            {...register("name")}
                             id="name"
                             placeholder="Your name.."
                         />
                     </Col100Styled>
-                    <span>{errors.name?.message}</span>
+                    {errors.name && <p style={{color: "red"}}>{errors.name.message}</p>}
                 </RowStyled>
 
                 <RowStyled>
@@ -66,7 +84,7 @@ export const Form = () => {
                                      placeholder="Your email.."
                         />
                     </Col100Styled>
-                    <span>{errors.email?.message}</span>
+                    {errors.email && <p style={{color: "red"}}>{errors.email.message}</p>}
                 </RowStyled>
 
                 <RowStyled>
@@ -74,18 +92,12 @@ export const Form = () => {
                         <label htmlFor="message">Message</label>
                     </Col25Styled>
                     <Col100Styled>
-                        <TextAreaStyled {...register("message", {
-                            required: "This field is required",
-                            minLength: {
-                                value: 5,
-                                message: "Your message at least should be 5 symbols "
-                            }
-                        })}
+                        <TextAreaStyled {...register("message")}
                                         id="message"
                                         placeholder="Write your message.."
                         />
                     </Col100Styled>
-                    <span>{errors.message?.message}</span>
+                    {errors.message && <p style={{color: "red"}}>{errors.message.message}</p>}
                 </RowStyled>
 
                 <RowStyled>
@@ -123,8 +135,6 @@ const FormContainerStyled = styled.div`
   background-color: #f2f2f2;
   padding: 20px;
   width: 450px;
-  //letter-spacing: 2px;
-  //height: 100%;
   @media (max-width: 500px) {
     width: 95vw;
   }
@@ -159,5 +169,9 @@ const InputSubmitStyled = styled.input`
 
   :hover {
     background-color: #2a2e60;
+  }
+
+  :active {
+    background-color: #282c34;
   }
 `
