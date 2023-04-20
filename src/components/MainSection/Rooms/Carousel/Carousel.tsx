@@ -29,7 +29,7 @@ export const Carousel: FC<carouselType> = ({children}) => {
 
     //slider to the right side
     const rightSlideHandle = () => {
-        console.log("right slide")
+        // console.log("right slide")
         setOffset((currOffset) => {
 
             const newOffset = currOffset - photoWidth
@@ -41,7 +41,7 @@ export const Carousel: FC<carouselType> = ({children}) => {
     }
     //slider to the left side
     const leftSlideHandle = () => {
-        console.log("left slide")
+        // console.log("left slide")
         setOffset((currOffset) => {
             const newOffset = currOffset + photoWidth
             return Math.min(newOffset, 0)

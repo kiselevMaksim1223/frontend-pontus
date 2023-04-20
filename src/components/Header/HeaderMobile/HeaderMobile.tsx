@@ -11,6 +11,7 @@ import {NavLinkStyled} from "../../../styled-components/commonComponents/NavLink
 import {Logo} from "../../common/Logo/Logo";
 import logoStandart from "../../../img/Logo/pontusLogo.png"
 import {HeaderMobileWrapperMedia} from "../../../styled-components/Header/MobileHeader/HeaderMobileWrapperMedia";
+import {NavLink} from "react-router-dom";
 
 
 export const HeaderMobile = () => {
@@ -45,7 +46,7 @@ export const HeaderMobile = () => {
                 </OpenedMenu>
                 : <StyledWrapper padding={"0.5em 0.2em"} backgroundColor={"#2A2E49"}>
                     <FlexStyled justify={"space-between"}>
-                        <StyledTitle color={"white"}>Hotel Pontus</StyledTitle>
+                       <NavLink style={{textDecoration:"none"}} to={"/about"}><StyledTitle color={"white"}>Hotel Pontus</StyledTitle></NavLink>
                         <Button onClick={openHandler} bcImg={burgerIcon} buttonType={"burger"}/>
                     </FlexStyled>
                 </StyledWrapper>

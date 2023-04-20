@@ -14,11 +14,10 @@ export const Rooms = () => {
             <StyledContainer>
                 <FlexStyled justify={"space-between"} isMedia>
                     <StyledWrapper padding={"5px"} lineHeight={"1.6em"} width={["40%", "85%"]} isMedia>
-
                         {roomsDescriptionTitles.map((t => {
                             return (<>
                                     <StyledTitle key={t.id} as={"h4"}>{t.title}</StyledTitle>
-                                    <ul style={{listStyleType:"none"}} >
+                                    <ul key={t.title} style={{listStyleType:"none"}} >
                                         {roomsDescriptions[t.id].map(d => {
                                             return(
                                                 <li key={d.id}>{d.description}</li>

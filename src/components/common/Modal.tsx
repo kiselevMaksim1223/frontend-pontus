@@ -19,7 +19,7 @@ const Modal: FC<modalPropsType> = ({ active, setActive, children}) => {
     }, [active])
 
 
-    console.log(children)
+    // console.log(children)
     return (
         <ModalWrapper active={active} onMouseDown={onMouseDownHandler}>
             <ModalContent active={active} onMouseDown={(e => e.stopPropagation())}>

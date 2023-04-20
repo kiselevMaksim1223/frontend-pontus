@@ -47,6 +47,7 @@ export const StyledButton = styled.button<propsType>`
           css<propsType>`
             background: url("${props => props.bcImg}") no-repeat center / contain;
             align-self: flex-end;
+            padding: 1em 2.2em;
             &:active {
               border: 1px solid white;
               color: #2a2e49;
