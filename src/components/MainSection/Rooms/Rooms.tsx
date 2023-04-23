@@ -5,8 +5,8 @@ import {StyledTitle} from "../../../styled-components/Title";
 import {Carousel} from "./Carousel/Carousel";
 import {FlexStyled} from "../../../styled-components/Flex";
 import {CarouselItem} from "../../../styled-components/MainBlock/Rooms/Carousel/CarouselItemStyled";
-import {sliderData} from "../../../api/sliderData";
-import {roomsDescriptionTitles, roomsDescriptions} from "../../../api/RoomsData";
+import {sliderData} from "../../../data/sliderData";
+import {roomsDescriptionTitles, roomsDescriptions} from "../../../data/RoomsData";
 
 export const Rooms = () => {
     return (

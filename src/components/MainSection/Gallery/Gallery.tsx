@@ -3,7 +3,7 @@ import {StyledWrapper} from "../../../styled-components/Wrapper";
 import {StyledContainer} from "../../../styled-components/Container";
 import {FlexStyled} from "../../../styled-components/Flex";
 import styled from "styled-components";
-import {galleryData} from "../../../api/galleryData";
+import {galleryData} from "../../../data/galleryData";
 import {useLocation} from "react-router-dom";
 import {StyledTitle} from "../../../styled-components/Title";
 import Modal from "../../common/Modal";
