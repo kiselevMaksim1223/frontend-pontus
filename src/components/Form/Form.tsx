@@ -44,9 +44,9 @@ export const Form:FC = () => {
         console.log(data)
         emailApi.sendMail(data)
             .then((res) => {
-                console.log(typeof res.data)
-                alert(res.data)
+                alert(res.data.messageMail)
             })
+
             .catch((e) => {
                 alert(e.message)
             })
