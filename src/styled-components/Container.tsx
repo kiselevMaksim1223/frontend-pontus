@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
-export const StyledContainer = styled.div`
+export const ContainerStyled = styled.div`
+  //position: relative;
   margin: 0 auto;
   //border: 1px solid; //just for dev
   height: 100%;

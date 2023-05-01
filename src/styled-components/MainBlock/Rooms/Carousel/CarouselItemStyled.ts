@@ -10,7 +10,7 @@ type carouselItem = {
 export const CarouselItem = styled.div<carouselItem>`
   //width: 400px;
   //height: 350px;
-  background: url("${props => props.url}") 0 0/100% 100% no-repeat;
+  background: url("${({url}) => url}") 0 0/100% 100% no-repeat;
   //background: ;
   height: 100%;
   min-width: 100%;
