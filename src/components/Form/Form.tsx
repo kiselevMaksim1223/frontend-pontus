@@ -1,9 +1,15 @@
 import React, {FC} from 'react';
 import {SubmitHandler, useForm} from "react-hook-form";
-import styled from "styled-components";
 import {emailApi} from "../../api/email-api";
-import * as yup from "yup";
 import {yupResolver} from "@hookform/resolvers/yup";
+import {InputSubmitStyled} from "../../styled-components/Form/Input/InputSubmit";
+import { FormContainerStyled } from '../../styled-components/Form/FormContainer/FormContainer';
+import {Col100Styled, Col25Styled} from '../../styled-components/Form/FormColumn/FormColumn';
+import {TextAreaStyled} from "../../styled-components/Form/TextArea/TextArea";
+import {RowStyled} from "../../styled-components/Form/FormRow/FormRow";
+import {InputStyled} from "../../styled-components/Form/Input/Input";
+import {schema} from "../../utils/validationSchema";
+import {ErrorStyled} from "../../styled-components/Form/FormError/FormError";
 
 export type formType = {
     name: string
@@ -11,47 +17,23 @@ export type formType = {
     message: string
 }
 
-const schema = yup.object().shape({
-    name: yup.string()
-        .min(2, "Min length is 2")
-        .required("Name is required")
-    ,
-    email: yup.string()
-        .email("Invalid email address")
-        .matches(
-            /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-            "Invalid email address format"
-        )
-        .required("Email is required"),
-    message: yup.string()
-        .min(7, "Min length is 7")
-        .required("Message is required")
-
-});
-
 export const Form:FC = () => {
 
     const {
         register, //includes name, onChange, onBlur, ref
         handleSubmit, //(data: Object, e?: Event) => Promise<void>
         formState: {errors}, //formState contains info about form state (errors, isDirty, isSubmitted...)
-        reset
     } = useForm<formType>({
         resolver: yupResolver(schema)
     })
 
     const onSubmit: SubmitHandler<formType> = data => {
-        console.log(data)
         emailApi.sendMail(data)
             .then((res) => {
                 alert(res.data.messageMail)
             })
-
             .catch((e) => {
                 alert(e.message)
-            })
-            .finally(()=>{
-                reset()
             })
     }
 
@@ -70,7 +52,7 @@ export const Form:FC = () => {
                             placeholder="Your name.."
                         />
                     </Col100Styled>
-                    {errors.name && <p style={{color: "red"}}>{errors.name.message}</p>}
+                    {errors.name && <ErrorStyled>{errors.name.message}</ErrorStyled>}
                 </RowStyled>
 
                 <RowStyled>
@@ -84,7 +66,7 @@ export const Form:FC = () => {
                                      placeholder="Your email.."
                         />
                     </Col100Styled>
-                    {errors.email && <p style={{color: "red"}}>{errors.email.message}</p>}
+                    {errors.email && <ErrorStyled>{errors.email.message}</ErrorStyled>}
                 </RowStyled>
 
                 <RowStyled>
@@ -97,7 +79,7 @@ export const Form:FC = () => {
                                         placeholder="Write your message.."
                         />
                     </Col100Styled>
-                    {errors.message && <p style={{color: "red"}}>{errors.message.message}</p>}
+                    {errors.message && <ErrorStyled>{errors.message.message}</ErrorStyled>}
                 </RowStyled>
 
                 <RowStyled>
@@ -107,71 +89,3 @@ export const Form:FC = () => {
         </FormContainerStyled>
     );
 };
-
-const RowStyled = styled.div`
-  display: flex;
-  flex-direction: column;
-
-  ::after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-`
-
-const Col25Styled = styled.div`
-  float: left;
-  width: 25%;
-  margin-top: 6px;
-`
-const Col100Styled = styled.div`
-  float: left;
-  width: 100%;
-  margin-top: 6px;
-`
-
-const FormContainerStyled = styled.div`
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
-  width: 450px;
-  @media (max-width: 500px) {
-    width: 95vw;
-  }
-`
-
-const InputStyled = styled.input`
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  resize: vertical;
-`
-
-const TextAreaStyled = styled.textarea`
-  width: 100%;
-  min-height: 100px;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  resize: none;
-  font-size: 16px;
-`
-
-const InputSubmitStyled = styled.input`
-  background-color: #2a2e49;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  float: right;
-
-  :hover {
-    background-color: #2a2e60;
-  }
-
-  :active {
-    background-color: #282c34;
-  }
-`
