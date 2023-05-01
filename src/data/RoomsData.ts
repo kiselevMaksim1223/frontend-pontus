@@ -9,7 +9,7 @@ type roomsDescriptionsType = {
     [p: string]: roomType[]
 }
 
-type roomsDescriptionTitlesType = {id:string, title:string}
+export type roomsDescriptionTitlesType = {id:string, title:string}
 
 const headTitleId1 = v1()
 const headTitleId2 = v1()
