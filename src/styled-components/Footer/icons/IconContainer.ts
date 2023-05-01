@@ -7,11 +7,11 @@ type propsType = {
     padding?:string
 }
 
-export const StyledImgContainer = styled.div<propsType>`
+export const ImgContainerStyled = styled.div<propsType>`
   position: relative;
-  width: ${props => props.width};
-  border-radius: ${props => props.borderRadius};
-  margin: ${props => props.margin};
-  padding: ${props => props.padding};
+  width: ${({width}) => width};
+  border-radius: ${({borderRadius}) => borderRadius};
+  margin: ${({margin}) => margin};
+  padding: ${({padding}) => padding};
 
 `

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const CarouselMainContainer = styled.div`
+export const CarouselMainContainerStyled = styled.div`
   flex: 1 0 auto;
   min-width: 600px;
   max-width: 600px;

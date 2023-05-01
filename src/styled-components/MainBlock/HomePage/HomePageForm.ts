@@ -1,8 +1,9 @@
 import styled from "styled-components";
 
 export const HomePageForm = styled.div`
-  position: absolute;
+  //position: absolute;
+  //float: top;
   top: 25%;
-  left: 5%;
+  left: 9%;
   z-index: 5;
 `

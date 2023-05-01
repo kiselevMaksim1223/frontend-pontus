@@ -7,14 +7,14 @@ type propsType = {
 export const UlStyled = styled.ul<propsType>`
   list-style: none;
   display: flex;
-  flex-direction: ${props => props.isColumn ? "column" : "row"};
+  flex-direction: ${({isColumn}) => isColumn ? "column" : "row"};
   align-items: center;
 `
 export const LiStyled = styled.li<propsType>`
   color:black; //white;
   cursor:pointer;
   
-  ${props => props.isColumn 
+  ${({isColumn}) => isColumn 
           ?css`
             position: relative;
             padding: 1em 0;
@@ -29,7 +29,6 @@ export const LiStyled = styled.li<propsType>`
               background-color: #2a2e49;
               opacity: .2;
             }
-            
           `
           :css`
             :not(:last-child) {

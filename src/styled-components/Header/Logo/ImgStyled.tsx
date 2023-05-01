@@ -2,10 +2,10 @@ import styled from "styled-components";
 
 type propsType = {
     width?:string
-    color?:string
+    margin?:string
 }
 
-export const TextStyled = styled.p<propsType>`
+export const ImgStyled = styled.img<propsType>`
   width: ${({width}) => width};
-  color: ${({color}) => color};
+  margin: ${({margin}) => margin};
 `

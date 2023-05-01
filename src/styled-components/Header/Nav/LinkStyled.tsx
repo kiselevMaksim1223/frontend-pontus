@@ -10,7 +10,7 @@ export const LinkStyled = styled.a<propsType>`
   text-decoration: none;
   //color: #2A2E49;
   
- ${props => props.type === "primary" && css`
+ ${({type}) => type === "primary" && css`
   color: white;
   &:hover {
     ::after {
@@ -25,7 +25,7 @@ export const LinkStyled = styled.a<propsType>`
       color: white;
     }
   `}
-  ${props => props.type === "secondary" && css`
+  ${({type}) => type === "secondary" && css`
    color: #2A2E49;
     &:hover {
      ::after {
@@ -41,7 +41,7 @@ export const LinkStyled = styled.a<propsType>`
      }
     }
   `}
-  ${props => props.type === "icon" && css`
+  ${({type}) => type === "icon" && css`
         position: absolute;
         top: 0;
         left: 0;

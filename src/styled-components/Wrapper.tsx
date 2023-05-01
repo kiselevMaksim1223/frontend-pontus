@@ -14,17 +14,17 @@ type propType = {
     isMedia?:boolean
 }
 
-export const StyledWrapper = styled.div<propType>`
-  padding: ${props => props.padding};
-  background-color: ${props => props.backgroundColor};
-  position: ${props => props.position};
-  width: ${props => props.width !== undefined ? props.width[0] : ""};
-  height: ${props => props.height}
-  bottom: ${props => props.bottom};
-  align-self: ${props => props.alignSelf};
-  margin: ${props => props.margin};
-  line-height: ${props => props.lineHeight};
-  ${(props) => props.blackout && css`
+export const WrapperStyled = styled.div<propType>`
+  padding: ${({padding}) => padding};
+  background-color: ${({backgroundColor}) => backgroundColor};
+  position: ${({position}) => position};
+  width: ${({width}) => width !== undefined ? width[0] : ""};
+  height: ${({height}) => height}
+  bottom: ${({bottom}) => bottom};
+  align-self: ${({alignSelf}) => alignSelf};
+  margin: ${({margin}) => margin};
+  line-height: ${({lineHeight}) => lineHeight};
+  ${({blackout}) => blackout && css`
     ::after {
       content: '';
       position: absolute;
@@ -50,9 +50,9 @@ export const StyledWrapper = styled.div<propType>`
   `
   }
   
-${props => props.isMedia && css<propType>`
+${({isMedia}) => isMedia && css<propType>`
   @media (max-width: 950px) {
-    width: ${props => props.width ? props.width[1] : ""};
+    width: ${({width}) => width ? width[1] : ""};
     text-align: center;
   }
 `}

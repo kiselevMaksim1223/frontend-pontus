@@ -7,7 +7,7 @@ type propsType = {
 }
 
 export const NavLinkStyled = styled(NavLink)<propsType>`
-  font-size: ${props => props.fontSize ? props.fontSize : "medium"};
+  font-size: ${({fontSize}) => fontSize ? fontSize : "medium"};
   font-weight: 400;
   color: inherit;
   position: relative;
@@ -25,7 +25,7 @@ export const NavLinkStyled = styled(NavLink)<propsType>`
       background-color: white;
     }
   }
-  ${props => props.linktype === "secondary" && css`
+  ${({linktype}) => linktype === "secondary" && css`
     &:hover {
       ::after {
         content: '';

@@ -1,7 +1,7 @@
 import styled, {css} from "styled-components";
 import {propsType} from "../../components/common/Button";
 
-export const StyledButton = styled.button<propsType>`
+export const ButtonStyled = styled.button<propsType>`
   min-height: 2.5em;
   background-color: #2a2e49;
   color: #fff;
@@ -10,7 +10,7 @@ export const StyledButton = styled.button<propsType>`
   border-radius: 0.5em;
   font-size: 1.1rem;
   cursor: pointer;
-  margin: ${(props) => props.margin};
+  margin: ${({margin}) => margin};
 
   &:hover {
     background-color: white;
@@ -24,8 +24,8 @@ export const StyledButton = styled.button<propsType>`
     border: 1px solid #2a2e49;
   }
 
-  ${(props) =>
-          props.buttonType === "secondary" &&
+  ${({buttonType}) =>
+          buttonType === "secondary" &&
           css`
             background-color: white;
             color: #2a2e49;
@@ -42,10 +42,10 @@ export const StyledButton = styled.button<propsType>`
               color: #2a2e49;
             }
           `}
-  ${(props) =>
-          props.buttonType === "burger" &&
+  ${({buttonType}) =>
+          buttonType === "burger" &&
           css<propsType>`
-            background: url("${props => props.bcImg}") no-repeat center / contain;
+            background: url("${({bcImg}) => bcImg}") no-repeat center / contain;
             align-self: flex-end;
             padding: 1em 2.2em;
             &:active {
