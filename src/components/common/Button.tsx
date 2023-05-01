@@ -1,5 +1,5 @@
 import React from "react";
-import {StyledButton} from "../../styled-components/commonComponents/Button";
+import {ButtonStyled} from "../../styled-components/common/Button";
 
 
 export type propsType ={
@@ -16,6 +16,6 @@ export const Button:React.FC<propsType> = ({onClick, ...props}) => {
         onClick()
     }
     return (
-        <StyledButton onClick={onClickHandler} {...props}/>
+        <ButtonStyled onClick={onClickHandler} {...props}/>
     );
 };

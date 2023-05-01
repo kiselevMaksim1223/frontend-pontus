@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {StyledImg} from "../../../styled-components/Header/Logo/StyledImg";
+import {ImgStyled} from "../../../styled-components/Header/Logo/ImgStyled";
 import {NavLink} from "react-router-dom";
 
 type logoPropsType = {
@@ -12,7 +12,7 @@ type logoPropsType = {
 export const Logo:FC<logoPropsType> = ({src, width, margin, onClick}) => {
     return (
         <NavLink to={"/"}>
-            <StyledImg src={src} alt="Logo" width={width} margin={margin} onClick={onClick}/>
+            <ImgStyled src={src} alt="Logo" width={width} margin={margin} onClick={onClick}/>
         </NavLink>
     );
 };

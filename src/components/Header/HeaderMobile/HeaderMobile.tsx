@@ -1,15 +1,15 @@
 import React, {useEffect, useState} from 'react';
-import {StyledWrapper} from "../../../styled-components/Wrapper";
-import {StyledTitle} from "../../../styled-components/Title";
+import {WrapperStyled} from "../../../styled-components/Wrapper";
+import {TitleStyled} from "../../../styled-components/Title";
 import {Button} from "../../common/Button";
 import burgerIcon from "../HeaderMobile/img/burger.svg"
 import closeIcon from "../HeaderMobile/img/close.svg"
 import {FlexStyled} from "../../../styled-components/Flex";
 import {OpenedMenu} from "../../../styled-components/Header/MobileHeader/OpenedMenu";
 import {LiStyled, UlStyled} from "../../../styled-components/Header/Nav/ULStyled";
-import {NavLinkStyled} from "../../../styled-components/commonComponents/NavLink";
+import {NavLinkStyled} from "../../../styled-components/common/NavLink";
 import {Logo} from "../../common/Logo/Logo";
-import logoStandart from "../../../img/Logo/pontusLogo.png"
+import logoStandart from "../../../data/img/Logo/pontusLogo.png"
 import {HeaderMobileWrapperMedia} from "../../../styled-components/Header/MobileHeader/HeaderMobileWrapperMedia";
 import {NavLink} from "react-router-dom";
 
@@ -44,12 +44,12 @@ export const HeaderMobile = () => {
                                                           fontSize={"large"}>Contacts</NavLinkStyled></LiStyled>
                     </UlStyled>
                 </OpenedMenu>
-                : <StyledWrapper padding={"0.5em 0.2em"} backgroundColor={"#2A2E49"}>
+                : <WrapperStyled padding={"0.5em 0.2em"} backgroundColor={"#2A2E49"}>
                     <FlexStyled justify={"space-between"}>
-                       <NavLink style={{textDecoration:"none"}} to={"/about"}><StyledTitle color={"white"}>Hotel Pontus</StyledTitle></NavLink>
+                       <NavLink style={{textDecoration:"none"}} to={"/about"}><TitleStyled color={"white"}>Hotel Pontus</TitleStyled></NavLink>
                         <Button onClick={openHandler} bcImg={burgerIcon} buttonType={"burger"}/>
                     </FlexStyled>
-                </StyledWrapper>
+                </WrapperStyled>
             }
         </HeaderMobileWrapperMedia>
     );

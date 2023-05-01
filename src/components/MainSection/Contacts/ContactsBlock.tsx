@@ -1,6 +1,6 @@
 import React from 'react';
-import {StyledTitle} from "../../../styled-components/Title";
-import {StyledText} from "../../../styled-components/Text";
+import {TitleStyled} from "../../../styled-components/Title";
+import {TextStyled} from "../../../styled-components/Text";
 import {LinkStyled} from "../../../styled-components/Header/Nav/LinkStyled";
 import {ContactInfoContainer, ContactInfoWrapper} from "../../../styled-components/MainBlock/Contacts/ContactInfoBlock";
 import {DirectionButton} from "../../../styled-components/MainBlock/Gallery/DirectionButton";
@@ -10,18 +10,18 @@ const ContactsBlock = () => {
     return (
         <ContactInfoContainer>
             <ContactInfoWrapper>
-                <StyledTitle as={"h3"}>Address</StyledTitle>
-                <StyledText>Shota Rustaveli 75 , Kobuleti, Georgia</StyledText>
+                <TitleStyled as={"h3"}>Address</TitleStyled>
+                <TextStyled>Shota Rustaveli 75 , Kobuleti, Georgia</TextStyled>
             </ContactInfoWrapper>
 
             <ContactInfoWrapper>
-                <StyledTitle as={"h3"}>Phone</StyledTitle>
+                <TitleStyled as={"h3"}>Phone</TitleStyled>
                 <LinkStyled type={"secondary"}>+995 123 456 789 </LinkStyled>
                 <span>(What`s up, Viber)</span>
             </ContactInfoWrapper>
 
             <ContactInfoWrapper>
-                <StyledTitle as={"h3"}>E-mail</StyledTitle>
+                <TitleStyled as={"h3"}>E-mail</TitleStyled>
                 <LinkStyled type={"secondary"}
                             href={"mailto:hotelpontus@gmail.com"}>hotelpontus@gmail.com</LinkStyled>
             </ContactInfoWrapper>

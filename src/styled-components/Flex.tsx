@@ -16,17 +16,17 @@ type propsType = {
 
 export const FlexStyled = styled.div<propsType>`
   display:flex;
-  flex-direction: ${(props) => props.direction || "row" } ;
-  align-items:${props => props.align || "stretch"} ;
-  justify-content:${props => props.justify || "stretch"};
-  margin:${props => props.margin || "0"} ;
-  padding: ${props => props.padding || "0"};
-  column-gap:${props => props.columnGap || "0"};
-  row-gap: ${props => props.rowGap || "0"};
-  text-align: ${props => props.textAlign || "start"};
-  flex-wrap: ${props => props.flexWrap};
+  flex-direction: ${({direction}) => direction || "row" } ;
+  align-items:${({align}) => align || "stretch"} ;
+  justify-content:${({justify}) => justify || "stretch"};
+  margin:${({margin}) => margin || "0"} ;
+  padding: ${({padding}) => padding || "0"};
+  column-gap:${({columnGap}) => columnGap || "0"};
+  row-gap: ${({rowGap}) => rowGap || "0"};
+  text-align: ${({textAlign}) => textAlign || "start"};
+  flex-wrap: ${({flexWrap}) => flexWrap};
   
-  ${props => props.isMedia && css`
+  ${({isMedia}) => isMedia && css`
   @media (max-width: 950px){
     flex-direction: column;
     align-items: center;

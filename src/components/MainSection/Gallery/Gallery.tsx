@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
-import {StyledWrapper} from "../../../styled-components/Wrapper";
-import {StyledContainer} from "../../../styled-components/Container";
+import {WrapperStyled} from "../../../styled-components/Wrapper";
+import {ContainerStyled} from "../../../styled-components/Container";
 import {FlexStyled} from "../../../styled-components/Flex";
 import styled from "styled-components";
 import {galleryData} from "../../../data/galleryData";
 import {useLocation} from "react-router-dom";
-import {StyledTitle} from "../../../styled-components/Title";
-import Modal from "../../common/Modal";
+import {TitleStyled} from "../../../styled-components/Title";
+import {Modal} from "../../common/Modal";
 
 export const Gallery = () => {
         //=====================================FOR SHOWING TITLE FOR COMPONENT==========================================
@@ -31,11 +31,11 @@ export const Gallery = () => {
                 <Modal active={activeModal} setActive={setActiveModal}>
                     <ModalImg src={currentPictures as string} alt={"Pictures"}/>
                 </Modal>
-                <StyledWrapper>
-                <StyledContainer>
-                    <StyledTitle as={"h2"} fontSize={"45px"} textAlign={"center"} color={"#2A2E49"}>
+                <WrapperStyled>
+                <ContainerStyled>
+                    <TitleStyled as={"h2"} fontSize={"45px"} textAlign={"center"} color={"#2A2E49"}>
                         {pathName}
-                    </StyledTitle>
+                    </TitleStyled>
                     <FlexStyled isMedia flexWrap={"wrap"} columnGap={"2em"} rowGap={"2em"} margin={"3em auto"}
                                 align={"center"} justify={"space-between"}>
                         {galleryData.map(i => {
@@ -48,8 +48,8 @@ export const Gallery = () => {
                             )
                         })}
                     </FlexStyled>
-                </StyledContainer>
-            </StyledWrapper>
+                </ContainerStyled>
+            </WrapperStyled>
             </>
         );
     }
