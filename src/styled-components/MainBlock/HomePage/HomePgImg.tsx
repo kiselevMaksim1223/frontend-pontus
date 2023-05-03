@@ -10,7 +10,7 @@ export const StyledHomePgImg = styled.div<HomePgPropsType>`
   padding-top: 65vh;
   background: url("${({img}) => img}") 0 70%/100% auto no-repeat;
   
-  @media (max-width: 550px) {
+  @media (max-width: 670px) {
     background: url("${({img}) => img}") 0 100%/100% 100% no-repeat
   }
 `
