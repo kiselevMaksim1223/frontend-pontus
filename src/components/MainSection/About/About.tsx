@@ -39,35 +39,35 @@ export const About: React.FC = () => {
                     </ContainerStyled>
                 </StyledHomePgImg>
             </WrapperStyled>
-            <WrapperStyled padding={"30px"}>
+            <WrapperStyled margin={"1em"} padding={"30px"}>
                 <ContainerStyled>
-                    <TitleStyled as={"h2"} color={"#2a2e49"}>Room services</TitleStyled>
-                    <Services>
+                    <TitleStyled fontSize={"28px"} as={"h2"} color={"#2a2e49"}>Room services</TitleStyled>
+                    <ServicesBlockStyled>
                         <ServiceItem>
-                            <TextStyled>air-cooling</TextStyled>
-                            <TbAirConditioning size={22}/>
+                            <TbAirConditioning  size={75}/>
+                            <TextStyled>Air-cooling</TextStyled>
                         </ServiceItem>
                         <ServiceItem>
+                            <MdOutlineAirportShuttle size={75}/>
                             <TextStyled>Airport Pickup</TextStyled>
-                            <MdOutlineAirportShuttle size={22}/>
                         </ServiceItem>
                         <ServiceItem>
+                            <MdWifi size={75}/>
                             <TextStyled>Wifi</TextStyled>
-                            <MdWifi size={22}/>
                         </ServiceItem>
                         <ServiceItem>
+                            <CiMonitor size={75}/>
                             <TextStyled>TV</TextStyled>
-                            <CiMonitor size={22}/>
                         </ServiceItem>
                         <ServiceItem>
+                            <MdOutlineBedroomParent size={75}/>
                             <TextStyled>24/7 room service</TextStyled>
-                            <MdOutlineBedroomParent size={22}/>
                         </ServiceItem>
                         <ServiceItem>
+                            <TbToolsKitchen2 size={75}/>
                             <TextStyled>Kitchen</TextStyled>
-                            <TbToolsKitchen2 size={22}/>
                         </ServiceItem>
-                    </Services>
+                    </ServicesBlockStyled>
                 </ContainerStyled>
             </WrapperStyled>
         </>
@@ -80,7 +80,7 @@ const HomePageWrapper = styled.div`
   z-index: 5;
 `
 
-const Services = styled.div`
+const ServicesBlockStyled = styled.div`
   display: grid;
   grid-template-columns: auto auto auto;
   grid-template-rows: auto auto;
@@ -88,17 +88,22 @@ const Services = styled.div`
   row-gap: 5em;
   color: #2a2e49;
   font-weight: 200;
+  @media(max-width: 750px){
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 25% 25% 25%;
+  }
 `
 const ServiceItem = styled.div`
-  width: 180px;
-  height: 150px;
+  //width: 100%;
+  //height: 100%;
   margin: 5px;
-  border: 2px solid #2a2e49;
   border-radius: 5px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   gap: 10px;
-  //background: #2a2e49;
-  //opacity: 0.9;
+  font-size: 1.4rem;
+  font-weight: 300;
+  text-align: center;
 `
