@@ -23,6 +23,7 @@ export const Form:FC = () => {
         register, //includes name, onChange, onBlur, ref
         handleSubmit, //(data: Object, e?: Event) => Promise<void>
         formState: {errors}, //formState contains info about form state (errors, isDirty, isSubmitted...)
+        reset
     } = useForm<formType>({
         resolver: yupResolver(schema)
     })
@@ -31,6 +32,7 @@ export const Form:FC = () => {
         emailApi.sendMail(data)
             .then((res) => {
                 alert(res.data.messageMail)
+                reset()
             })
             .catch((e) => {
                 alert(e.message)
